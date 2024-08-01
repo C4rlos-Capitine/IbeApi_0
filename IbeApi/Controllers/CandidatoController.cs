@@ -84,7 +84,10 @@ namespace IbeApi.Controllers
         {
             _logger.LogInformation("Get request received for candidate with email {email} and phone {telefone}", email, password);
 
-            Candidato candidato = new Candidato();
+            Candidato candidato = new Candidato
+            {
+                FindTrue = false // Default to false
+            };
 
             try
             {
@@ -112,17 +115,16 @@ namespace IbeApi.Controllers
                                 candidato.email = reader.IsDBNull(reader.GetOrdinal("EMAIL")) ? null : reader.GetString(reader.GetOrdinal("EMAIL"));
                                 candidato.telefone = reader.IsDBNull(reader.GetOrdinal("TELEFONE")) ? 0 : reader.GetInt64(reader.GetOrdinal("TELEFONE"));
                                 candidato.telemovel = reader.IsDBNull(reader.GetOrdinal("TELEMOVE")) ? 0 : reader.GetInt64(reader.GetOrdinal("TELEMOVE"));
-
-
                                 candidato.genero = reader.IsDBNull(reader.GetOrdinal("GENERO")) ? null : reader.GetString(reader.GetOrdinal("GENERO"));
 
-                                _logger.LogInformation("Candidate data retrieved successfully for email {email} and phone {telefone}", email, password
-                                    );
+                                candidato.FindTrue = true; // Set to true if candidate is found
+
+                                _logger.LogInformation("Candidate data retrieved successfully for email {email} and phone {telefone}", email, password);
                             }
                             else
                             {
                                 _logger.LogWarning("Candidate with email {email} and phone {telefone} not found.", email, password);
-                                return NotFound("Candidate not found");
+                                return NotFound(candidato);
                             }
                         }
                     }
@@ -131,21 +133,24 @@ namespace IbeApi.Controllers
             catch (SqlException sqlEx)
             {
                 _logger.LogError(sqlEx, "SQL Error occurred while fetching candidate data for email {email} and phone {telefone}", email, password);
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching candidate data"+sqlEx);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching candidate data: " + sqlEx.Message);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while fetching candidate data for email {email} and phone {telefone}", email, password);
-                return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred"+ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred: " + ex.Message);
             }
 
             return Ok(candidato);
         }
 
 
+
         [HttpPost]
         public IActionResult Post([FromBody] Candidato candidato)
         {
+            int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
+
             _logger.LogInformation("Post request received for candidate: {candidato}", candidato);
 
             if (candidato == null)
@@ -162,13 +167,13 @@ namespace IbeApi.Controllers
                     _logger.LogInformation("Database connection opened.");
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, PASSWORD, NOME, APELIDO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO)
+                INSERT INTO GBICANDI (CODCANDI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO);";
+                VALUES (@CODCANDI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@CODCANDI", (object)candidato.codcandi ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@CODCANDI", codcandi);
                         command.Parameters.AddWithValue("@NOME", (object)candidato.nome ?? DBNull.Value);
                         command.Parameters.AddWithValue("@APELIDO", (object)candidato.apelido ?? DBNull.Value);
                         command.Parameters.AddWithValue("@PASSWORD", (object)candidato.password ?? DBNull.Value);
@@ -177,6 +182,9 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@TELEFONE", candidato.telefone != 0 ? (object)candidato.telefone : DBNull.Value);
                         command.Parameters.AddWithValue("@TELEMOVE", candidato.telemovel != 0 ? (object)candidato.telemovel : DBNull.Value);
                         command.Parameters.AddWithValue("@GENERO", (object)candidato.genero ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@DATADENA", new DateTime(candidato.ano, candidato.mes, candidato.dia));
+                        command.Parameters.AddWithValue("@NUMEO", (object)candidato.num_ident ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@IDADE", (object)candidato.idade ?? DBNull.Value);
 
                         // Executar o comando e obter o ID do candidato inserido
                         candidato.codcandi = (int)command.ExecuteScalar();

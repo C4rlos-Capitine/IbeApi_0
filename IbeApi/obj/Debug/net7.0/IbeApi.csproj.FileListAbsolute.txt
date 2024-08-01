@@ -76,3 +76,5 @@ C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\refint\IbeApi
 C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\IbeApi.pdb
 C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\IbeApi.genruntimeconfig.cache
 C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\ref\IbeApi.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\IbeApi.sourcelink.json
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\IbeApi.staticwebassets.runtime.json
