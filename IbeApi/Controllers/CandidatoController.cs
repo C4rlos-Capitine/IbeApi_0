@@ -50,8 +50,8 @@ namespace IbeApi.Controllers
                                 candidato.apelido = reader.GetString(reader.GetOrdinal("APELIDO"));
                                 candidato.nomecomp = reader.GetString(reader.GetOrdinal("NOMECOMP"));
                                 candidato.email = reader.GetString(reader.GetOrdinal("EMAIL"));
-                                candidato.telefone = reader.GetInt64(reader.GetOrdinal("TELEFONE"));
-                                candidato.telemovel = reader.GetInt64(reader.GetOrdinal("TELEMOVE"));
+                                candidato.telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
+                                candidato.telemovel = reader.GetString(reader.GetOrdinal("TELEMOVE"));
                                 candidato.genero = reader.GetString(reader.GetOrdinal("GENERO"));
 
                                 _logger.LogInformation("Candidate data retrieved successfully for ID {codcandi}", codcandi);
@@ -96,7 +96,7 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = "SELECT CODCANDI, NOME, APELIDO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO FROM GBICANDI WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
+                    const string sql = "SELECT CODCANDI, NOME, IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO FROM GBICANDI WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -113,10 +113,11 @@ namespace IbeApi.Controllers
                                 candidato.apelido = reader.IsDBNull(reader.GetOrdinal("APELIDO")) ? null : reader.GetString(reader.GetOrdinal("APELIDO"));
                                 candidato.nomecomp = reader.IsDBNull(reader.GetOrdinal("NOMECOMP")) ? null : reader.GetString(reader.GetOrdinal("NOMECOMP"));
                                 candidato.email = reader.IsDBNull(reader.GetOrdinal("EMAIL")) ? null : reader.GetString(reader.GetOrdinal("EMAIL"));
-                                candidato.telefone = reader.IsDBNull(reader.GetOrdinal("TELEFONE")) ? 0 : reader.GetInt64(reader.GetOrdinal("TELEFONE"));
-                                candidato.telemovel = reader.IsDBNull(reader.GetOrdinal("TELEMOVE")) ? 0 : reader.GetInt64(reader.GetOrdinal("TELEMOVE"));
+                                candidato.telefone = reader.IsDBNull(reader.GetOrdinal("TELEFONE")) ? null : reader.GetString(reader.GetOrdinal("TELEFONE"));
+                                candidato.telemovel = reader.IsDBNull(reader.GetOrdinal("TELEMOVE")) ? null : reader.GetString(reader.GetOrdinal("TELEMOVE"));
+                                candidato.num_ident = reader.IsDBNull(reader.GetOrdinal("NUMEO")) ? 0 : reader.GetInt64(reader.GetOrdinal("NUMEO"));
                                 candidato.genero = reader.IsDBNull(reader.GetOrdinal("GENERO")) ? null : reader.GetString(reader.GetOrdinal("GENERO"));
-
+                                candidato.idade = reader.IsDBNull(reader.GetOrdinal("IDADE")) ? 0 : reader.GetInt16(reader.GetOrdinal("IDADE"));
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
                                 _logger.LogInformation("Candidate data retrieved successfully for email {email} and phone {telefone}", email, password);
@@ -179,8 +180,8 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@PASSWORD", (object)candidato.password ?? DBNull.Value);
                         command.Parameters.AddWithValue("@NOMECOMP", (object)candidato.nomecomp ?? DBNull.Value);
                         command.Parameters.AddWithValue("@EMAIL", (object)candidato.email ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@TELEFONE", candidato.telefone != 0 ? (object)candidato.telefone : DBNull.Value);
-                        command.Parameters.AddWithValue("@TELEMOVE", candidato.telemovel != 0 ? (object)candidato.telemovel : DBNull.Value);
+                        command.Parameters.AddWithValue("@TELEFONE", (object)candidato.telefone ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@TELEMOVE",  (object)candidato.telemovel ?? DBNull.Value);
                         command.Parameters.AddWithValue("@GENERO", (object)candidato.genero ?? DBNull.Value);
                         command.Parameters.AddWithValue("@DATADENA", new DateTime(candidato.ano, candidato.mes, candidato.dia));
                         command.Parameters.AddWithValue("@NUMEO", (object)candidato.num_ident ?? DBNull.Value);

@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\models\\provincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\models\\provincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\provinciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\provinciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\candidatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\candidatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\candidaturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\candidaturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\models\\candidato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\models\\candidato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\doccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\doccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,18 +47,6 @@
       "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\controllers\\candidatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\controllers\\candidatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\models\\candidato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\models\\candidato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|c:\\users\\falcao\\desktop\\dot net pro\\ibeapi\\ibeapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B4B684AA-C133-4FE0-AF2B-6C973BB5E611}|IbeApi\\IbeApi.csproj|solutionrelative:ibeapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -50,89 +62,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CursoController.cs",
-              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CursoController.cs",
-              "RelativeDocumentMoniker": "IbeApi\\Controllers\\CursoController.cs",
-              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CursoController.cs",
-              "RelativeToolTip": "IbeApi\\Controllers\\CursoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAANAAAA",
+              "DocumentIndex": 1,
+              "Title": "ProvinciaController.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\ProvinciaController.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Controllers\\ProvinciaController.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\ProvinciaController.cs",
+              "RelativeToolTip": "IbeApi\\Controllers\\ProvinciaController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAACkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T08:34:01.457Z",
+              "WhenOpened": "2024-08-05T13:06:21.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Curso.cs",
-              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Curso.cs",
-              "RelativeDocumentMoniker": "IbeApi\\Models\\Curso.cs",
-              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Curso.cs",
-              "RelativeToolTip": "IbeApi\\Models\\Curso.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Title": "CandidaturaController.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CandidaturaController.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Controllers\\CandidaturaController.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CandidaturaController.cs",
+              "RelativeToolTip": "IbeApi\\Controllers\\CandidaturaController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T08:31:47.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Program.cs",
-              "RelativeDocumentMoniker": "IbeApi\\Program.cs",
-              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Program.cs",
-              "RelativeToolTip": "IbeApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T13:43:17.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditalController.cs",
-              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\EditalController.cs",
-              "RelativeDocumentMoniker": "IbeApi\\Controllers\\EditalController.cs",
-              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\EditalController.cs",
-              "RelativeToolTip": "IbeApi\\Controllers\\EditalController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:45:47.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Edital.cs",
-              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Edital.cs",
-              "RelativeDocumentMoniker": "IbeApi\\Models\\Edital.cs",
-              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Edital.cs",
-              "RelativeToolTip": "IbeApi\\Models\\Edital.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T09:42:35.374Z",
+              "WhenOpened": "2024-08-05T12:57:35.514Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Provincia.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Provincia.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Models\\Provincia.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Provincia.cs",
+              "RelativeToolTip": "IbeApi\\Models\\Provincia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T12:50:29.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "DocController.cs",
               "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\DocController.cs",
               "RelativeDocumentMoniker": "IbeApi\\Controllers\\DocController.cs",
               "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\DocController.cs",
               "RelativeToolTip": "IbeApi\\Controllers\\DocController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAswCUAAAARAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAACUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-30T06:32:46.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\appsettings.json",
               "RelativeDocumentMoniker": "IbeApi\\appsettings.json",
@@ -144,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "IbeApi\\Properties\\launchSettings.json",
@@ -156,13 +142,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "CursoController.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CursoController.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Controllers\\CursoController.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CursoController.cs",
+              "RelativeToolTip": "IbeApi\\Controllers\\CursoController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACUAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T08:34:01.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CandidatoController.cs",
               "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CandidatoController.cs",
               "RelativeDocumentMoniker": "IbeApi\\Controllers\\CandidatoController.cs",
               "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\CandidatoController.cs",
               "RelativeToolTip": "IbeApi\\Controllers\\CandidatoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABpAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAABIAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-29T08:52:42.966Z",
               "EditorCaption": ""
@@ -170,15 +169,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Edital.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Edital.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Models\\Edital.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Edital.cs",
+              "RelativeToolTip": "IbeApi\\Models\\Edital.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:42:35.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Candidato.cs",
               "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Candidato.cs",
               "RelativeDocumentMoniker": "IbeApi\\Models\\Candidato.cs",
               "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Candidato.cs",
               "RelativeToolTip": "IbeApi\\Models\\Candidato.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-29T08:52:42.968Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EditalController.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\EditalController.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Controllers\\EditalController.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Controllers\\EditalController.cs",
+              "RelativeToolTip": "IbeApi\\Controllers\\EditalController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T09:45:47.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Program.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Program.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Program.cs",
+              "RelativeToolTip": "IbeApi\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T13:43:17.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Curso.cs",
+              "DocumentMoniker": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Curso.cs",
+              "RelativeDocumentMoniker": "IbeApi\\Models\\Curso.cs",
+              "ToolTip": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\Models\\Curso.cs",
+              "RelativeToolTip": "IbeApi\\Models\\Curso.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T08:31:47.933Z"
             }
           ]
         }

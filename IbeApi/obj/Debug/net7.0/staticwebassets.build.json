@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X0LhxbHSU8dfYhPUnEMeX2P7GCfLdwLeunft6Skvku8=",
+  "Hash": "LrZzXcvzT0ZgMgCRlDogq3OK9TmgXhx6l/koEETF2qI=",
   "Source": "IbeApi",
   "BasePath": "_content/IbeApi",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\11\\PES_Menu_221_18062024031456.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\-1304897450\\PES_Menu_221_18062024031456.pdf",
+      "SourceId": "IbeApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
+      "BasePath": "_content/IbeApi",
+      "RelativePath": "uploads/-1304897450/PES_Menu_221_18062024031456.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\-1304897450\\PES_Menu_221_18062024031456.pdf"
     },
     {
       "Identity": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\1489556242\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
