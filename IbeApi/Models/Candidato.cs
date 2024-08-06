@@ -17,7 +17,7 @@ namespace IbeApi.Models
         public long num_ident {  get; set; } 
         public int idade { get; set; }  
         public int codprovi { get; set; }
-        public string provincia { get; set; }
+       // public string provincia { get; set; }
         public DateTime datadena { get; set; }
         public int dia {  get; set; }
         public int mes { get; set; }

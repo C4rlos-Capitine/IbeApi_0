@@ -168,13 +168,14 @@ namespace IbeApi.Controllers
                     _logger.LogInformation("Database connection opened.");
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@CODCANDI", codcandi);
+                        command.Parameters.AddWithValue("@CODPROVI", candidato.codprovi);
                         command.Parameters.AddWithValue("@NOME", (object)candidato.nome ?? DBNull.Value);
                         command.Parameters.AddWithValue("@APELIDO", (object)candidato.apelido ?? DBNull.Value);
                         command.Parameters.AddWithValue("@PASSWORD", (object)candidato.password ?? DBNull.Value);
