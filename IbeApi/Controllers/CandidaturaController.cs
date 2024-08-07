@@ -71,7 +71,7 @@ namespace IbeApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult saveCandidatura([FromBody] Candidatura candidatura)
+        public IActionResult saveCandidatura([FromBody] CandidaturaDTO candidatura)
         {
             _logger.LogInformation("Post request received for candidate: {candidato}", candidatura);
 
@@ -98,7 +98,7 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@CODCANDI", candidatura.codcandi);
                         command.Parameters.AddWithValue("@CODEDITA", candidatura.cod_edital);
                         command.Parameters.AddWithValue("@CODCURSO", candidatura.codecurso);
-                        command.Parameters.AddWithValue("@DATASUBM", candidatura.data_subm);
+                        command.Parameters.AddWithValue("@DATASUBM", new DateTime(candidatura.ano_submissao, candidatura.mes_submissao, candidatura.dia_submissao));
                         command.Parameters.AddWithValue("@ESTADO", "SUBMETIDO");
                         command.Parameters.AddWithValue("@RESULTADO", "");
 
