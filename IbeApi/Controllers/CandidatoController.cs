@@ -25,7 +25,7 @@ namespace IbeApi.Controllers
         {
             _logger.LogInformation("Get request received for candidate ID {codcandi}", codcandi);
 
-            Candidato candidato = new Candidato();
+            CandidatoDTO candidato = new CandidatoDTO();
 
             try
             {
@@ -34,7 +34,7 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = "SELECT CODCANDI, NOME, APELIDO, NOMECOMP, EMAIL, GENERO, TELEFONE, TELEMOVE FROM GBICANDI WHERE CODCANDI = @CODCANDI";
+                    const string sql = "SELECT CODCANDI, NOME, APELIDO, NOMECOMP, EMAIL, GENERO, TELEFONE, TELEMOVE, OCUPACAO, NATURALI, RUA, ESTADODO FROM GBICANDI WHERE CODCANDI = @CODCANDI";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -53,7 +53,11 @@ namespace IbeApi.Controllers
                                 candidato.telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
                                 candidato.telemovel = reader.GetString(reader.GetOrdinal("TELEMOVE"));
                                 candidato.genero = reader.GetString(reader.GetOrdinal("GENERO"));
-
+                                candidato.estado = reader.IsDBNull(reader.GetOrdinal("ESTADODO")) ? null : reader.GetString(reader.GetOrdinal("ESTADODO"));
+                                candidato.ocupacao = reader.IsDBNull(reader.GetOrdinal("OCUPACAO")) ? null: reader.GetString(reader.GetOrdinal("OCUPACAO"));
+                                candidato.naturalidade = reader.IsDBNull(reader.GetOrdinal("NATURALI")) ? null: reader.GetString(reader.GetOrdinal("NATURALI"));
+                                candidato.rua = reader.IsDBNull(reader.GetOrdinal("RUA")) ? null : reader.GetString(reader.GetOrdinal("RUA"));
+                                // candidato.cod_edital = reader.GetInt32(reader.GetOrdinal("CODEDITA"));
                                 _logger.LogInformation("Candidate data retrieved successfully for ID {codcandi}", codcandi);
                             }
                             else
@@ -84,7 +88,7 @@ namespace IbeApi.Controllers
         {
             _logger.LogInformation("Get request received for candidate with email {email} and phone {telefone}", email, password);
 
-            Candidato candidato = new Candidato
+            CandidatoDTO candidato = new CandidatoDTO
             {
                 FindTrue = false // Default to false
             };
@@ -96,7 +100,7 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = "SELECT CODCANDI, NOME, IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO FROM GBICANDI WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
+                    const string sql = "SELECT CODCANDI, NOME, IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA FROM GBICANDI WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -118,6 +122,11 @@ namespace IbeApi.Controllers
                                 candidato.num_ident = reader.IsDBNull(reader.GetOrdinal("NUMEO")) ? 0 : reader.GetInt64(reader.GetOrdinal("NUMEO"));
                                 candidato.genero = reader.IsDBNull(reader.GetOrdinal("GENERO")) ? null : reader.GetString(reader.GetOrdinal("GENERO"));
                                 candidato.idade = reader.IsDBNull(reader.GetOrdinal("IDADE")) ? 0 : reader.GetInt16(reader.GetOrdinal("IDADE"));
+                                candidato.estado = reader.IsDBNull(reader.GetOrdinal("ESTADODO")) ? null : reader.GetString(reader.GetOrdinal("ESTADODO"));
+                                candidato.ocupacao = reader.IsDBNull(reader.GetOrdinal("OCUPACAO")) ? null : reader.GetString(reader.GetOrdinal("OCUPACAO"));
+                                candidato.naturalidade = reader.IsDBNull(reader.GetOrdinal("NATURALI")) ? null : reader.GetString(reader.GetOrdinal("NATURALI"));
+                                candidato.rua = reader.IsDBNull(reader.GetOrdinal("RUA")) ? null : reader.GetString(reader.GetOrdinal("RUA"));
+                                //candidato.cod_edital = reader.GetInt32(reader.GetOrdinal("CODEDITA"));
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
                                 _logger.LogInformation("Candidate data retrieved successfully for email {email} and phone {telefone}", email, password);
@@ -168,9 +177,9 @@ namespace IbeApi.Controllers
                     _logger.LogInformation("Database connection opened.");
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -187,6 +196,9 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@DATADENA", new DateTime(candidato.ano, candidato.mes, candidato.dia));
                         command.Parameters.AddWithValue("@NUMEO", (object)candidato.num_ident ?? DBNull.Value);
                         command.Parameters.AddWithValue("@IDADE", (object)candidato.idade ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@OCUPACAO", (object)candidato.ocupacao ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@NATURALI", (object)candidato.naturalidade ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@RUA", (object)candidato.rua ?? DBNull.Value);
 
                         // Executar o comando e obter o ID do candidato inserido
                         candidato.codcandi = (int)command.ExecuteScalar();

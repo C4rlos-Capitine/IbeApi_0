@@ -81,7 +81,6 @@ namespace IbeApi.Controllers
                 return BadRequest("Candidate data is null");
             }
 
-
             try
             {
                 using (var connection = new SqlConnection(_connectionString))
@@ -89,28 +88,49 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = @"
-                INSERT INTO GBICANDIDATURAS (CODCANDI, CODEDITA, CODCURSO, DATASUBM, ESTADO, RESULTADO)
-                VALUES (@CODCANDI, @CODEDITA, @CODCURSO, @DATASUBM, @ESTADO, @RESULTADO);";
+                    const string insertSql = @"
+                        INSERT INTO GBICANDIDATURAS (CODCANDI, CODEDITA, CODCURSO, DATASUBM, ESTADO, RESULTADO)
+                        VALUES (@CODCANDI, @CODEDITA, @CODCURSO, @DATASUBM, @ESTADO, @RESULTADO);";
 
-                    using (var command = new SqlCommand(sql, connection))
+                    const string updateSql = @"
+                        UPDATE GBICANDI
+                        SET CODCURSO = @CODCURSO, CODEDITA = @CODEDITA, ESTADODO = @ESTADODO
+                        WHERE CODCANDI = @CODCANDI;";
+
+                    using (var transaction = connection.BeginTransaction())
                     {
-                        command.Parameters.AddWithValue("@CODCANDI", candidatura.codcandi);
-                        command.Parameters.AddWithValue("@CODEDITA", candidatura.cod_edital);
-                        command.Parameters.AddWithValue("@CODCURSO", candidatura.codecurso);
-                        command.Parameters.AddWithValue("@DATASUBM", new DateTime(candidatura.ano_submissao, candidatura.mes_submissao, candidatura.dia_submissao));
-                        command.Parameters.AddWithValue("@ESTADO", "SUBMETIDO");
-                        command.Parameters.AddWithValue("@RESULTADO", "");
+                        using (var insertCommand = new SqlCommand(insertSql, connection, transaction))
+                        {
+                            insertCommand.Parameters.AddWithValue("@CODCANDI", candidatura.codcandi);
+                            insertCommand.Parameters.AddWithValue("@CODEDITA", candidatura.cod_edital);
+                            insertCommand.Parameters.AddWithValue("@CODCURSO", candidatura.codecurso);
+                            insertCommand.Parameters.AddWithValue("@DATASUBM", new DateTime(candidatura.ano_submissao, candidatura.mes_submissao, candidatura.dia_submissao));
+                            insertCommand.Parameters.AddWithValue("@ESTADO", "SUBMETIDO");
+                            insertCommand.Parameters.AddWithValue("@RESULTADO", "NÃO DISPONÍVEL");
 
-                  
+                            // Execute the insert command
+                            insertCommand.ExecuteNonQuery();
+                            _logger.LogInformation("Candidate data inserted successfully with ID {codcandi}", candidatura.codcandi);
+                        }
 
-                        // Executar o comando e obter o ID do candidato inserido
-                        command.ExecuteScalar();
-                        _logger.LogInformation("Candidate data inserted successfully with ID {codcandi}");
+                        using (var updateCommand = new SqlCommand(updateSql, connection, transaction))
+                        {
+                            updateCommand.Parameters.AddWithValue("@CODCANDI", candidatura.codcandi);
+                            updateCommand.Parameters.AddWithValue("@CODEDITA", candidatura.cod_edital);
+                            updateCommand.Parameters.AddWithValue("@CODCURSO", candidatura.codecurso);
+                            updateCommand.Parameters.AddWithValue("@ESTADODO", "S");
+
+                            // Execute the update command
+                            updateCommand.ExecuteNonQuery();
+                            _logger.LogInformation("Candidate data updated in GBICANDI with ID {codcandi}", candidatura.codcandi);
+                        }
+
+                        // Commit the transaction
+                        transaction.Commit();
                     }
                 }
 
-                // Retornar uma resposta com código 201 e a mensagem de sucesso com o ID do candidato
+                // Return a response with status code 201 and a success message with the candidate ID
                 var result = new
                 {
                     Message = "Candidate registered successfully",
@@ -123,14 +143,15 @@ namespace IbeApi.Controllers
             catch (SqlException sqlEx)
             {
                 _logger.LogError(sqlEx, "SQL Error occurred while inserting candidate data.");
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while inserting candidate data" + sqlEx);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while inserting candidate data: " + sqlEx.Message);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while inserting candidate data.");
-                return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred" + ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred: " + ex.Message);
             }
         }
+
 
 
 

@@ -7,6 +7,12 @@ namespace IbeApi.Controllers
     [Route("api/[controller]")]
     public class DocController : ControllerBase
     {
+
+
+
+
+
+
         [HttpPost("upload")]
         public async Task<IActionResult> UploadFile([FromQuery] string id, IFormFile file)
         {
@@ -60,6 +66,8 @@ namespace IbeApi.Controllers
                 });
             }
         }
+
+
     }
 
 
