@@ -1,4 +1,6 @@
-﻿namespace IbeApi.Models
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+
+namespace IbeApi.Models
 {
     public class CandidatoDTO
     {
@@ -17,8 +19,11 @@
         public int codprovi { get; set; }
         public int cod_edital { get; set; }
         public string estado { get; set; }
-        // public string provincia { get; set; }
+        public string provincia { get; set; }
+        public string cod_prov {  get; set; }
         public DateTime datadena { get; set; }
+        public DateTime data_emissao { get; set; }
+        public DateTime data_validade { get; set; }
         public int dia { get; set; }
         public int mes { get; set; }
         public int ano { get; set; }

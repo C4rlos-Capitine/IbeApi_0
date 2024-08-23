@@ -4,6 +4,7 @@ using IbeApi.Models;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Data;
 
 namespace IbeApi.Controllers
 {
@@ -34,7 +35,7 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = "SELECT CODCANDI, NOME, APELIDO, NOMECOMP, EMAIL, GENERO, TELEFONE, TELEMOVE, OCUPACAO, NATURALI, RUA, ESTADODO FROM GBICANDI WHERE CODCANDI = @CODCANDI";
+                    const string sql = "SELECT CODCANDI, NOME, DATADENA, DATAEMIS, VALIDO, APELIDO, NOMECOMP, EMAIL, GENERO, TELEFONE, TELEMOVE, OCUPACAO, NATURALI, RUA, ESTADODO, GBIPROVI.CODPROVI, GBIPROVI.PROVINCI FROM GBICANDI JOIN GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI WHERE CODCANDI = @CODCANDI";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -57,7 +58,11 @@ namespace IbeApi.Controllers
                                 candidato.ocupacao = reader.IsDBNull(reader.GetOrdinal("OCUPACAO")) ? null: reader.GetString(reader.GetOrdinal("OCUPACAO"));
                                 candidato.naturalidade = reader.IsDBNull(reader.GetOrdinal("NATURALI")) ? null: reader.GetString(reader.GetOrdinal("NATURALI"));
                                 candidato.rua = reader.IsDBNull(reader.GetOrdinal("RUA")) ? null : reader.GetString(reader.GetOrdinal("RUA"));
-                                // candidato.cod_edital = reader.GetInt32(reader.GetOrdinal("CODEDITA"));
+                                candidato.datadena = reader.GetDateTime("DATADENA");
+                                candidato.data_emissao = reader.GetDateTime("DATAEMIS");
+                                candidato.data_validade = reader.GetDateTime("VALIDO");
+                                candidato.provincia = reader.IsDBNull(reader.GetOrdinal("PROVINCI")) ? null : reader.GetString(reader.GetOrdinal("PROVINCI"));
+                                candidato.codprovi = reader.GetInt32(reader.GetOrdinal("CODPROVI"));
                                 _logger.LogInformation("Candidate data retrieved successfully for ID {codcandi}", codcandi);
                             }
                             else
@@ -100,7 +105,7 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = "SELECT CODCANDI, NOME, IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA FROM GBICANDI WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
+                    const string sql = "SELECT CODCANDI, NOME, DATADENA, DATAEMIS, VALIDO, IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA, GBIPROVI.CODPROVI, GBIPROVI.PROVINCI FROM GBICANDI JOIN GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -126,7 +131,11 @@ namespace IbeApi.Controllers
                                 candidato.ocupacao = reader.IsDBNull(reader.GetOrdinal("OCUPACAO")) ? null : reader.GetString(reader.GetOrdinal("OCUPACAO"));
                                 candidato.naturalidade = reader.IsDBNull(reader.GetOrdinal("NATURALI")) ? null : reader.GetString(reader.GetOrdinal("NATURALI"));
                                 candidato.rua = reader.IsDBNull(reader.GetOrdinal("RUA")) ? null : reader.GetString(reader.GetOrdinal("RUA"));
-                                //candidato.cod_edital = reader.GetInt32(reader.GetOrdinal("CODEDITA"));
+                                candidato.datadena = reader.GetDateTime("DATADENA");
+                                candidato.data_emissao = reader.GetDateTime("DATAEMIS");
+                                candidato.data_validade = reader.GetDateTime("VALIDO");
+                                candidato.provincia = reader.IsDBNull(reader.GetOrdinal("PROVINCI")) ? null : reader.GetString(reader.GetOrdinal("PROVINCI"));
+                                candidato.codprovi = reader.GetInt32(reader.GetOrdinal("CODPROVI"));
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
                                 _logger.LogInformation("Candidate data retrieved successfully for email {email} and phone {telefone}", email, password);
@@ -159,15 +168,22 @@ namespace IbeApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Candidato candidato)
         {
-            int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
-
-            _logger.LogInformation("Post request received for candidate: {candidato}", candidato);
-
             if (candidato == null)
             {
                 _logger.LogWarning("Post request received with null candidate.");
                 return BadRequest("Candidate data is null");
             }
+
+            // Verificar se o NUMEO ou EMAIL já existem
+            if (IsCandidatoExists(candidato.num_ident, candidato.email))
+            {
+                _logger.LogWarning("Candidate with NUMEO {numeo} or EMAIL {email} already exists.", candidato.num_ident, candidato.email);
+                return Conflict("Candidate with the same NUMEO or EMAIL already exists.");
+            }
+
+            int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
+
+            _logger.LogInformation("Post request received for candidate: {candidato}");
 
             try
             {
@@ -177,9 +193,9 @@ namespace IbeApi.Controllers
                     _logger.LogInformation("Database connection opened.");
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -191,9 +207,11 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@NOMECOMP", (object)candidato.nomecomp ?? DBNull.Value);
                         command.Parameters.AddWithValue("@EMAIL", (object)candidato.email ?? DBNull.Value);
                         command.Parameters.AddWithValue("@TELEFONE", (object)candidato.telefone ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@TELEMOVE",  (object)candidato.telemovel ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@TELEMOVE", (object)candidato.telemovel ?? DBNull.Value);
                         command.Parameters.AddWithValue("@GENERO", (object)candidato.genero ?? DBNull.Value);
                         command.Parameters.AddWithValue("@DATADENA", new DateTime(candidato.ano, candidato.mes, candidato.dia));
+                        command.Parameters.AddWithValue("@DATAEMIS", new DateTime(candidato.ano_emissao, candidato.mes_emissao, candidato.dia_emissao));
+                        command.Parameters.AddWithValue("@VALIDO", new DateTime(candidato.ano_validade, candidato.mes_validade, candidato.dia_validade));
                         command.Parameters.AddWithValue("@NUMEO", (object)candidato.num_ident ?? DBNull.Value);
                         command.Parameters.AddWithValue("@IDADE", (object)candidato.idade ?? DBNull.Value);
                         command.Parameters.AddWithValue("@OCUPACAO", (object)candidato.ocupacao ?? DBNull.Value);
@@ -227,6 +245,105 @@ namespace IbeApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred" + ex);
             }
         }
+
+        private bool IsCandidatoExists(long numeo, string email)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                const string sql = @"
+            SELECT COUNT(*)
+            FROM GBICANDI
+            WHERE NUMEO = @NUMEO OR EMAIL = @EMAIL;";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@NUMEO", (object)numeo ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@EMAIL", (object)email ?? DBNull.Value);
+
+                    var count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+        [HttpPut("{codcandi}")]
+        public IActionResult Put(int codcandi, [FromBody] CandidatoDTO candidato)
+        {
+            if (candidato == null)
+            {
+                _logger.LogWarning("Put request received with null candidate.");
+                return BadRequest("Candidate data is null");
+            }
+
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    _logger.LogInformation("Database connection opened.");
+
+                    // SQL query for updating candidate data, excluding password and email
+                    const string sql = @"
+                        UPDATE GBICANDI
+                        SET CODPROVI = @CODPROVI,
+
+                            TELEFONE = @TELEFONE,
+                            TELEMOVE = @TELEMOVE,
+                            NUMEO = @NUMEO,
+                            OCUPACAO = @OCUPACAO,
+                            NATURALI = @NATURALI,
+                            RUA = @RUA
+                        WHERE CODCANDI = @CODCANDI;
+                        ";
+
+                    using (var command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@CODCANDI", codcandi);
+                        command.Parameters.AddWithValue("@CODPROVI", candidato.codprovi);
+                        command.Parameters.AddWithValue("@TELEFONE", (object)candidato.telefone ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@TELEMOVE", (object)candidato.telemovel ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@NUMEO", (object)candidato.num_ident ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@OCUPACAO", (object)candidato.ocupacao ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@NATURALI", (object)candidato.naturalidade ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@RUA", (object)candidato.rua ?? DBNull.Value);
+
+                        // Execute the command
+                        var rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            _logger.LogInformation("Candidate data updated successfully for ID {id}", codcandi);
+                        }
+                        else
+                        {
+                            _logger.LogWarning("No candidate data updated for ID {id}", codcandi);
+                            return NotFound($"Candidate with ID {codcandi} not found.");
+                        }
+                    }
+                }
+
+                // Return a response indicating success
+                var result = new
+                {
+                    Message = "Candidate data updated successfully",
+                    Code = codcandi,
+                    success = true,
+                };
+
+                return Ok(result);
+            }
+            catch (SqlException sqlEx)
+            {
+                _logger.LogError(sqlEx, "SQL Error occurred while updating candidate data.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating candidate data" + sqlEx);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while updating candidate data.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred" + ex);
+            }
+        }
+
 
     }
 }

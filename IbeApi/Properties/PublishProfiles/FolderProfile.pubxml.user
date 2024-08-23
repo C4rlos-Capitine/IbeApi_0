@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\FALCAO\Desktop\publish_api</_PublishTargetUrl>
-    <History>True|2024-08-14T14:44:21.1555383Z||;True|2024-08-12T10:31:51.2012870+02:00||;True|2024-08-08T08:38:14.9296464+02:00||;True|2024-08-08T08:01:24.4664927+02:00||;</History>
+    <History>True|2024-08-22T14:00:27.0950535Z||;True|2024-08-14T16:44:21.1555383+02:00||;True|2024-08-12T10:31:51.2012870+02:00||;True|2024-08-08T08:38:14.9296464+02:00||;True|2024-08-08T08:01:24.4664927+02:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

@@ -26,13 +26,16 @@ namespace IbeApi.Models
         public int ano { get; set; }
         public string? certificado { get; set; }
         public string? ocupacao { get; set; }
-       
 
-        /*
+
         public int dia_emissao { get; set; }
         public int mes_emissao { get; set; }
-        public int ano_emissao { get; set; } 
-        */   
+        public int ano_emissao { get; set; }
+
+        public int dia_validade { get; set; }
+        public int mes_validade { get; set; }
+        public int ano_validade { get; set; }
+
     }
 
 
