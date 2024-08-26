@@ -35,6 +35,11 @@ namespace IbeApi.Models
         public int dia_validade { get; set; }
         public int mes_validade { get; set; }
         public int ano_validade { get; set; }
+        //novos campos
+        public int codedital { get; set; }
+        public String nivel  { get; set; }
+        public int codarea { get; set; }
+        public string especialidade {  get; set; } 
 
     }
 
