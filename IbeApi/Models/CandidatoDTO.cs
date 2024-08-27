@@ -30,5 +30,9 @@ namespace IbeApi.Models
         public string? ocupacao { get; set; }
         public string? rua { get; set; }
         public string? naturalidade { get; set; }
+        public string? edital { get; set; }
+        public string? area { get; set; }
+        public int codarea { get; set; }
+        public string especialidade { get; set; }
     }
 }
