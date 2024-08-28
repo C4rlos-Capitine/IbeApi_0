@@ -14,7 +14,7 @@ namespace IbeApi.Models
         public string genero { get; set; }
         public string password { get; set; }
         public bool FindTrue { get; set; }
-        public long num_ident {  get; set; } 
+        public String num_ident {  get; set; } 
         public int idade { get; set; }  
         public int codprovi { get; set; }
         public string? rua { get; set; }
@@ -26,7 +26,7 @@ namespace IbeApi.Models
         public int ano { get; set; }
         public string? certificado { get; set; }
         public string? ocupacao { get; set; }
-
+        public string? tipo_doc { get; set; }
 
         public int dia_emissao { get; set; }
         public int mes_emissao { get; set; }

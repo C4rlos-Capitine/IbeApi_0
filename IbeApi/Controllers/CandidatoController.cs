@@ -105,8 +105,58 @@ namespace IbeApi.Controllers
                     connection.Open();
                     _logger.LogInformation("Database connection opened.");
 
-                    const string sql = "SELECT CODCANDI, GBICANDI.NOME, ESPECIAL, GBIEDITA.NOME AS EDITAL, GBICANDI.CODEDITA, DATADENA, DATAEMIS, VALIDO, GBICANDI.IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA, GBIPROVI.CODPROVI, GBIPROVI.PROVINCI, AREAS, GBICANDI.CODAREA FROM GBICANDI JOIN GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI JOIN GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA JOIN GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
-
+                    //const string sql = "SELECT CODCANDI, GBICANDI.NOME, ESPECIAL, GBIEDITA.NOME AS EDITAL, GBICANDI.CODEDITA, DATADENA, DATAEMIS, VALIDO, GBICANDI.IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA, GBIPROVI.CODPROVI, GBIPROVI.PROVINCI, AREAS, GBICANDI.CODAREA FROM GBICANDI JOIN GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI JOIN GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA JOIN GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
+                    const string sql = @"
+                        SELECT 
+                            CODCANDI, 
+                            GBICANDI.NOME, 
+                            CASE 
+                                WHEN ESTADODO = 'P' THEN 'Em avaliação'
+                                WHEN ESTADODO = 'R' THEN 'Reprovado'
+                                WHEN ESTADODO = 'A' THEN 'Aprovado'
+                                ELSE 'UNKNOWN'
+                            END AS ESTADODO,
+                            ESPECIAL, 
+                            GBIEDITA.NOME AS EDITAL, 
+                            GBICANDI.CODEDITA, 
+                            DATADENA, 
+                            DATAEMIS, 
+                            VALIDO, 
+                            GBICANDI.IDADE, 
+                            APELIDO, 
+                            NUMEO, 
+                            NOMECOMP, 
+                            EMAIL, 
+                            TELEFONE, 
+                            TELEMOVE, 
+                            GENERO, 
+                            PONTUACA,
+                            GBICANDI.NIVEL,
+                            CASE
+                                WHEN GBICANDI.NIVEL = 'E' THEN 'Médio'
+                                WHEN GBICANDI.NIVEL = 'L' THEN 'Licenciatura'
+                                WHEN GBICANDI.NIVEL = 'P' THEN 'ETP'
+                                WHEN GBICANDI.NIVEL = 'M' THEN 'Mestrado'
+                                WHEN GBICANDI.NIVEL = 'D' THEN 'Dutoramento'
+                                ELSE 'UNKNOWN'
+                            END AS NIVEL_DESCRICAO,
+                            OCUPACAO, 
+                            NATURALI, 
+                            RUA, 
+                            GBIPROVI.CODPROVI, 
+                            GBIPROVI.PROVINCI, 
+                            AREAS, 
+                            GBICANDI.CODAREA 
+                        FROM 
+                            GBICANDI 
+                        JOIN 
+                            GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI 
+                        JOIN 
+                            GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA 
+                        JOIN 
+                            GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA 
+                        WHERE 
+                            EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
                     using (var command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@EMAIL", email);
@@ -124,7 +174,7 @@ namespace IbeApi.Controllers
                                 candidato.email = reader.IsDBNull(reader.GetOrdinal("EMAIL")) ? null : reader.GetString(reader.GetOrdinal("EMAIL"));
                                 candidato.telefone = reader.IsDBNull(reader.GetOrdinal("TELEFONE")) ? null : reader.GetString(reader.GetOrdinal("TELEFONE"));
                                 candidato.telemovel = reader.IsDBNull(reader.GetOrdinal("TELEMOVE")) ? null : reader.GetString(reader.GetOrdinal("TELEMOVE"));
-                                candidato.num_ident = reader.IsDBNull(reader.GetOrdinal("NUMEO")) ? 0 : reader.GetInt64(reader.GetOrdinal("NUMEO"));
+                                candidato.identificacao = reader.IsDBNull(reader.GetOrdinal("NUMEO")) ? null : reader.GetString(reader.GetOrdinal("NUMEO"));
                                 candidato.genero = reader.IsDBNull(reader.GetOrdinal("GENERO")) ? null : reader.GetString(reader.GetOrdinal("GENERO"));
                                 candidato.idade = reader.IsDBNull(reader.GetOrdinal("IDADE")) ? 0 : reader.GetInt16(reader.GetOrdinal("IDADE"));
                                 candidato.estado = reader.IsDBNull(reader.GetOrdinal("ESTADODO")) ? null : reader.GetString(reader.GetOrdinal("ESTADODO"));
@@ -138,9 +188,9 @@ namespace IbeApi.Controllers
                                 candidato.codprovi = reader.GetInt32(reader.GetOrdinal("CODPROVI"));
                                 candidato.edital = reader.IsDBNull(reader.GetOrdinal("EDITAL")) ? null : reader.GetString(reader.GetOrdinal("EDITAL"));
                                 candidato.especialidade = reader.IsDBNull(reader.GetOrdinal("ESPECIAL")) ? null : reader.GetString(reader.GetOrdinal("ESPECIAL"));
-                                candidato.area = reader.IsDBNull(reader.GetOrdinal("AREAS")) ? null : reader.GetString(reader.GetOrdinal("AREAS"));
-                                candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
-                              
+                                candidato.area = reader.IsDBNull(reader.GetOrdinal("AREAS")) ? null : reader.GetString(reader.GetOrdinal("AREAS"));//NIVEL_DESCRICAO
+                                candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NIVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));                                                                                          //candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
+                                candidato.pontuacao = reader.IsDBNull(reader.GetOrdinal("PONTUACA")) ? 0 : reader.GetInt16(reader.GetOrdinal("PONTUACA"));
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
 
@@ -208,9 +258,9 @@ namespace IbeApi.Controllers
 
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NIVEL, ESPECIAL, ESTADODO)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NIVEL, ESPECIAL, ESTADODO, TIPODEDO)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NIVEL, @ESPECIAL, @ESTADODO);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NIVEL, @ESPECIAL, @ESTADODO, @TIPODEDO);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -236,7 +286,8 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@CODAREA", (object)candidato.codarea ?? DBNull.Value);
                         command.Parameters.AddWithValue("@ESPECIAL", (object)candidato.especialidade ?? DBNull.Value);
                         command.Parameters.AddWithValue("@NIVEL", (object)candidato.nivel ?? DBNull.Value);//ESTADODO
-                        command.Parameters.AddWithValue("@ESTADODO", "S");
+                        command.Parameters.AddWithValue("@ESTADODO", "P");
+                        command.Parameters.AddWithValue("@TIPODEDO", (object)candidato.tipo_doc ?? DBNull.Value);
 
 
 
@@ -269,7 +320,7 @@ namespace IbeApi.Controllers
             }
         }
 
-        private bool IsCandidatoExists(long numeo, string email)
+        private bool IsCandidatoExists(String numeo, string email)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -327,7 +378,7 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@CODPROVI", candidato.codprovi);
                         command.Parameters.AddWithValue("@TELEFONE", (object)candidato.telefone ?? DBNull.Value);
                         command.Parameters.AddWithValue("@TELEMOVE", (object)candidato.telemovel ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@NUMEO", (object)candidato.num_ident ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@NUMEO", (object)candidato.identificacao ?? DBNull.Value);
                         command.Parameters.AddWithValue("@OCUPACAO", (object)candidato.ocupacao ?? DBNull.Value);
                         command.Parameters.AddWithValue("@NATURALI", (object)candidato.naturalidade ?? DBNull.Value);
                         command.Parameters.AddWithValue("@RUA", (object)candidato.rua ?? DBNull.Value);
