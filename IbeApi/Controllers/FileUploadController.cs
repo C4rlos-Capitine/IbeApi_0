@@ -18,20 +18,9 @@ namespace IbeApi.Controllers
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> UploadFile([FromQuery] string id, IFormFile file)
+        public async Task<IActionResult> UploadFile([FromQuery] string id, int tipo, IFormFile file)
         {
-            // Validate the ID parameter
-            
-           /* if (id == null)
-            {
-                return BadRequest(new { StatusCode = 400, Message = "ID parameter is required and must be greater than zero." });
-            }
-
-            // Validate the file
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest(new { StatusCode = 400, Message = "Ficheiro não enviado." });
-            }*/
+           
 
             try
             {
@@ -49,10 +38,27 @@ namespace IbeApi.Controllers
                     await connection.OpenAsync();
 
                     var query = "UPDATE GBICANDI SET CERTIFICADO = @CERTIFICADO WHERE CODCANDI = @CODCANDI";
-
+                    var value = "@CERTIFICADO";
+                    if (tipo == 1)
+                    {
+                        query = "UPDATE GBICANDI SET BI = @BI WHERE CODCANDI = @CODCANDI";
+                        value = "@BI";
+                    }else if(tipo == 2)
+                    {
+                        query = "UPDATE GBICANDI SET CERTIFICADO = @CERTIFICADO WHERE CODCANDI = @CODCANDI";
+                        value = "@CERTIFICADO";
+                    }else if (tipo == 3)
+                    {
+                        query = "UPDATE GBICANDI SET NUIT = @NUIT WHERE CODCANDI = @CODCANDI";
+                        value = "@NUIT";
+                    }else if (tipo == 4)
+                    {
+                        query = "UPDATE GBICANDI SET FOTOPASSE = @FOTOPASSE WHERE CODCANDI = @CODCANDI";
+                        value = "@FOTOPASSE";
+                    }
                     using (var command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@CERTIFICADO", fileBytes);
+                        command.Parameters.AddWithValue(value, fileBytes);
                         command.Parameters.AddWithValue("@CODCANDI", id);
 
                         var rowsAffected = await command.ExecuteNonQueryAsync();
