@@ -1,3 +1,4 @@
+using Rotativa.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,3 +24,9 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+//configuracoes para rotativa
+String wwwroot = app.Environment.WebRootPath;
+
+RotativaConfiguration.Setup(wwwroot, "rotativa");

@@ -420,55 +420,63 @@ namespace IbeApi.Controllers
             }
         }
 
-        [HttpPost("upload")]
-        public async Task<IActionResult> UploadImage(IFormFile file, string id)
-        {
+        
 
-            string _storagePath = Path.Combine(Directory.GetCurrentDirectory(), "UploadedImages");
-            if (!Directory.Exists(_storagePath))
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadFile([FromQuery] string id, IFormFile file)
+        {
+            // Log received parameters
+            if (file != null)
             {
-                Directory.CreateDirectory(_storagePath);
+                Console.WriteLine($"Received ID: {id}");
+                Console.WriteLine($"File: {file?.FileName}");
+                Console.WriteLine($"File name: {file.FileName}");
+                Console.WriteLine($"Content type: {file.ContentType}");
+                Console.WriteLine($"File size: {file.Length} bytes");
+            }
+            else
+            {
+                Console.WriteLine("No file received.");
             }
 
+            // Validate the ID parameter
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest(new { StatusCode = 400, Message = "ID parameter is required." });
+            }
 
+            // Validate the file
             if (file == null || file.Length == 0)
             {
-                return BadRequest("No file uploaded.");
+                return BadRequest(new { StatusCode = 400, Message = "Ficheiro não enviado." });
             }
-
-            // Validate the id
-            if (string.IsNullOrWhiteSpace(id))
-            {
-                return BadRequest("Invalid id provided.");
-            }
-
-            // Get the file extension from the uploaded file
-            var fileExtension = Path.GetExtension(file.FileName);
-            if (string.IsNullOrWhiteSpace(fileExtension))
-            {
-                return BadRequest("Invalid file extension.");
-            }
-
-            // Combine id with file extension to create the file name
-            var fileName = $"{file.FileName}";
-            var filePath = Path.Combine(_storagePath, fileName);
 
             try
             {
+                var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", id);
+                Directory.CreateDirectory(uploadsFolderPath);
+                var filePath = Path.Combine(uploadsFolderPath, file.FileName);
+
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await file.CopyToAsync(stream);
                 }
 
-                var fileUrl = $"/uploads/{id}/{fileName}";
-                return Ok(new { FileUrl = fileUrl });
+                return Created(new Uri(filePath, UriKind.Relative), new
+                {
+                    StatusCode = 201,
+                    Message = "Ficheiro enviado com sucesso.",
+                    FilePath = filePath
+                });
             }
             catch (Exception ex)
             {
-                // Log the exception (optional)
-                Console.WriteLine($"Error saving file: {ex.Message}");
-
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error saving file: {ex.Message}");
+                Console.Error.WriteLine(ex);
+                return StatusCode(500, new
+                {
+                    StatusCode = 500,
+                    Message = "Um erro ocorreu ao enviar, contacte o IBE."
+                });
             }
         }
 
