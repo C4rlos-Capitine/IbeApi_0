@@ -78,3 +78,14 @@ C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\IbeApi.genrun
 C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\ref\IbeApi.dll
 C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\obj\Debug\net7.0\IbeApi.sourcelink.json
 C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\IbeApi.staticwebassets.runtime.json
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi\bin\Debug\net7.0\RotativaCore.dll

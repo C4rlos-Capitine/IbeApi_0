@@ -14,6 +14,7 @@ namespace IbeApi.Controllers
     {
         private readonly string _connectionString;
         private readonly ILogger<CandidatoController> _logger;
+        
 
         public CandidatoController(IConfiguration configuration, ILogger<CandidatoController> logger)
         {
@@ -418,6 +419,59 @@ namespace IbeApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred" + ex);
             }
         }
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadImage(IFormFile file, string id)
+        {
+
+            string _storagePath = Path.Combine(Directory.GetCurrentDirectory(), "UploadedImages");
+            if (!Directory.Exists(_storagePath))
+            {
+                Directory.CreateDirectory(_storagePath);
+            }
+
+
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No file uploaded.");
+            }
+
+            // Validate the id
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return BadRequest("Invalid id provided.");
+            }
+
+            // Get the file extension from the uploaded file
+            var fileExtension = Path.GetExtension(file.FileName);
+            if (string.IsNullOrWhiteSpace(fileExtension))
+            {
+                return BadRequest("Invalid file extension.");
+            }
+
+            // Combine id with file extension to create the file name
+            var fileName = $"{file.FileName}";
+            var filePath = Path.Combine(_storagePath, fileName);
+
+            try
+            {
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                var fileUrl = $"/uploads/{id}/{fileName}";
+                return Ok(new { FileUrl = fileUrl });
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (optional)
+                Console.WriteLine($"Error saving file: {ex.Message}");
+
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error saving file: {ex.Message}");
+            }
+        }
+
 
 
     }

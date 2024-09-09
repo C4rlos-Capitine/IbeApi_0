@@ -2,14 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace IbeApi.Controllers
 {
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class FileUploadController : ControllerBase
     {
-
+        private readonly string _storagePath;
         private readonly string _connectionString;
 
         public FileUploadController(IConfiguration configuration)
@@ -156,6 +160,8 @@ namespace IbeApi.Controllers
                 });
             }
         }
+
+       
     }
     
 }

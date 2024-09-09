@@ -5,7 +5,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\inetpub\IbeApi_v7</_PublishTargetUrl>
-    <History>True|2024-09-03T12:19:25.7621889Z||;True|2024-09-03T14:11:17.6745284+02:00||;True|2024-09-02T16:31:37.0097830+02:00||;</History>
+    <History>True|2024-09-04T09:52:08.4789277Z||;True|2024-09-03T14:19:25.7621889+02:00||;True|2024-09-03T14:11:17.6745284+02:00||;True|2024-09-02T16:31:37.0097830+02:00||;</History>
     <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="SqlServerDb">
+      <Value>Data Source=FALCAO\MSSQLSERVER15%3bInitial Catalog=GBITESTE0%3bIntegrated Security=True%3bTrusted_Connection=true%3bEncrypt=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>
