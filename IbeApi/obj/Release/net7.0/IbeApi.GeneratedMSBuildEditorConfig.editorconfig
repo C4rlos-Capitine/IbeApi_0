@@ -17,3 +17,11 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\FALCAO\Desktop\dot net pro\IbeApi\IbeApi
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/FALCAO/Desktop/dot net pro/IbeApi/IbeApi/Views/ReportPageController/report_page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0UGFnZUNvbnRyb2xsZXJccmVwb3J0X3BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FALCAO/Desktop/dot net pro/IbeApi/IbeApi/Views/Report/report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XHJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

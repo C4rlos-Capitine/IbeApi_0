@@ -24,6 +24,7 @@ namespace IbeApi.Models
         public DateTime datadena { get; set; }
         public DateTime data_emissao { get; set; }
         public DateTime data_validade { get; set; }
+        public DateTime data_subm { get; set; }
         public string? ocupacao { get; set; }
         public string? rua { get; set; }
         public string? naturalidade { get; set; }

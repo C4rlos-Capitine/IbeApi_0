@@ -1,0 +1,116 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+
+@using IbeApi.Models
+@model IbeApi.Models.CandidatoDTO
+<!DOCTYPE html>
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+
+   <style>
+        /* Add your styles here */
+        *{
+           font-family: Arial, sans-serif;
+        }
+        .header_div{
+            display: flex;
+            flex-direction: row;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid ;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #2196F3;
+            text-align: center;
+        }
+
+    </style>
+<html>
+<head>
+    <title>IBE IP - Comprovativo de Inscrição</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <div id ="header_div">
+            <img src="https://www.ibe.gov.mz/wp-content/uploads/2021/03/logo.jpeg"/>
+            <h1>IBE IP - Comprovativo de Inscrição</h1>
+        </div>
+    </header>
+    
+    <!--<h2>Dados Pessoais</h2>-->
+    <table class="table table-striped">
+        <tr><th colspan="2">Dados Pessoais</th></tr>
+        <tr>
+            <td>Nome do Candidato</td>
+            <td>@Model.nome @Model.apelido</td>
+        </tr>
+        <tr>
+            <td>Idade</td>
+            <td>@Model.idade</td>
+        </tr>
+        <tr>
+            <td>Documento de Identificação</td>
+            <td>@Model.identificacao</td>
+        </tr>
+        <tr>
+            <td>Naturalidade</td>
+            <td>@Model.naturalidade</td>
+        </tr>
+        <tr>
+            <td>Ocupação</td>
+            <td>@Model.ocupacao</td>
+        </tr>
+        <tr>
+            <td>Provincia de Candidatura</td>
+            <td>@Model.provincia</td>
+        </tr>
+
+        <tr><th colspan="2">Dados da Candidatura e Formação Académica</th></tr>
+
+        <tr>
+            <td>Código da Candidatura</td>
+            <td>@Model.codcandi</td>
+        </tr>
+        <tr>
+            <td>Data de Submissão</td>
+            <td></td> <!-- Ensure the Model has this property -->
+        </tr>
+        <tr>
+            <td>Edital</td>
+            <td>@Model.edital</td>
+        </tr>
+        <tr>
+            <td>Nível</td>
+            <td>@Model.nivel</td>
+        </tr>
+        <tr>
+            <td>Área</td>
+            <td>@Model.area</td>
+        </tr>
+        <tr>
+            <td>Especialidade</td>
+            <td>@Model.especialidade</td>
+        </tr>
+    </table>
+    <!-- Add more details as needed -->
+</body>
+</html>

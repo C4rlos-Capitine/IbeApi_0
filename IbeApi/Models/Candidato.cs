@@ -35,6 +35,7 @@ namespace IbeApi.Models
         public String nivel  { get; set; }
         public int codarea { get; set; }
         public string especialidade {  get; set; } 
+        public DateTime data_subm { get; set; }
     }
 
 

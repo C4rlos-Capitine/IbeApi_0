@@ -53,8 +53,6 @@ namespace IbeApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred: " + ex.Message);
             }
 
-
-            return Ok();
         }
     }
 }
