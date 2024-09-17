@@ -38,7 +38,7 @@ namespace IbeApi.Controllers
 
                     //const string sql = "SELECT CODCANDI, GBICANDI.NOME, ESPECIAL, GBIEDITA.NOME AS EDITAL, GBICANDI.CODEDITA, DATADENA, DATAEMIS, VALIDO, GBICANDI.IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA, GBIPROVI.CODPROVI, GBIPROVI.PROVINCI, AREAS, GBICANDI.CODAREA FROM GBICANDI JOIN GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI JOIN GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA JOIN GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
                     const string sql = @"
-                        SELECT 
+                         SELECT 
                             CODCANDI, 
                             GBICANDI.NOME, 
                             CASE 
@@ -70,7 +70,6 @@ namespace IbeApi.Controllers
                                 WHEN GBICANDI.NVEL = 'ET' THEN 'ETP'
                                 WHEN GBICANDI.NVEL = 'M' THEN 'Mestrado'
                                 WHEN GBICANDI.NVEL = 'D' THEN 'Dutoramento'
-                                ELSE 'UNKNOWN'
                             END AS NIVEL_DESCRICAO,
                             OCUPACAO, 
                             NATURALI, 
@@ -78,7 +77,12 @@ namespace IbeApi.Controllers
                             GBIPROVI.CODPROVI, 
                             GBIPROVI.PROVINCI, 
                             AREAS, 
-                            GBICANDI.CODAREA 
+                            GBICANDI.CODAREA,
+                            GBIEDITA.TIPOSBOL, 
+                            CASE
+		                         WHEN GBIEDITA.TIPOSBOL = 'I' THEN 'Bolsa interna'
+		                         WHEN GBIEDITA.TIPOSBOL = 'E' THEN 'Bolsa externa'
+	                        END AS TIPO_BOLSA
                         FROM 
                             GBICANDI 
                         JOIN 
@@ -115,15 +119,16 @@ namespace IbeApi.Controllers
                                 candidato.rua = reader.IsDBNull(reader.GetOrdinal("RUA")) ? null : reader.GetString(reader.GetOrdinal("RUA"));
                                 candidato.datadena = reader.GetDateTime("DATADENA");
                                 candidato.data_emissao = reader.GetDateTime("DATAEMIS");
-                                candidato.data_validade = reader.GetDateTime("VALIDO");
                                 candidato.data_subm = reader.GetDateTime("DATASUBM");
+                                candidato.data_validade = reader.GetDateTime("VALIDO");
                                 candidato.provincia = reader.IsDBNull(reader.GetOrdinal("PROVINCI")) ? null : reader.GetString(reader.GetOrdinal("PROVINCI"));
                                 candidato.codprovi = reader.GetInt32(reader.GetOrdinal("CODPROVI"));
                                 candidato.edital = reader.IsDBNull(reader.GetOrdinal("EDITAL")) ? null : reader.GetString(reader.GetOrdinal("EDITAL"));
                                 candidato.especialidade = reader.IsDBNull(reader.GetOrdinal("ESPECIAL")) ? null : reader.GetString(reader.GetOrdinal("ESPECIAL"));
                                 candidato.area = reader.IsDBNull(reader.GetOrdinal("AREAS")) ? null : reader.GetString(reader.GetOrdinal("AREAS"));//NIVEL_DESCRICAO
-                                candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));                                                                                          //candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
+                                candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NIVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));                                                                                          //candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
                                 candidato.pontuacao = reader.IsDBNull(reader.GetOrdinal("PONTUACA")) ? 0 : reader.GetInt16(reader.GetOrdinal("PONTUACA"));
+                                candidato.tipo_bolsa = reader.IsDBNull(reader.GetOrdinal("TIPO_BOLSA")) ? null : reader.GetString(reader.GetOrdinal("TIPO_BOLSA"));
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
 
@@ -171,7 +176,7 @@ namespace IbeApi.Controllers
 
                     //const string sql = "SELECT CODCANDI, GBICANDI.NOME, ESPECIAL, GBIEDITA.NOME AS EDITAL, GBICANDI.CODEDITA, DATADENA, DATAEMIS, VALIDO, GBICANDI.IDADE, APELIDO, NUMEO, NOMECOMP, EMAIL, TELEFONE, TELEMOVE, GENERO, ESTADODO, OCUPACAO, NATURALI, RUA, GBIPROVI.CODPROVI, GBIPROVI.PROVINCI, AREAS, GBICANDI.CODAREA FROM GBICANDI JOIN GBIPROVI ON GBIPROVI.CODPROVI = GBICANDI.CODPROVI JOIN GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA JOIN GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA WHERE EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
                     const string sql = @"
-                        SELECT 
+                         SELECT 
                             CODCANDI, 
                             GBICANDI.NOME, 
                             CASE 
@@ -203,7 +208,6 @@ namespace IbeApi.Controllers
                                 WHEN GBICANDI.NVEL = 'ET' THEN 'ETP'
                                 WHEN GBICANDI.NVEL = 'M' THEN 'Mestrado'
                                 WHEN GBICANDI.NVEL = 'D' THEN 'Dutoramento'
-                                ELSE 'UNKNOWN'
                             END AS NIVEL_DESCRICAO,
                             OCUPACAO, 
                             NATURALI, 
@@ -211,7 +215,12 @@ namespace IbeApi.Controllers
                             GBIPROVI.CODPROVI, 
                             GBIPROVI.PROVINCI, 
                             AREAS, 
-                            GBICANDI.CODAREA 
+                            GBICANDI.CODAREA,
+                            GBIEDITA.TIPOSBOL, 
+                            CASE
+		                         WHEN GBIEDITA.TIPOSBOL = 'I' THEN 'Bolsa interna'
+		                         WHEN GBIEDITA.TIPOSBOL = 'E' THEN 'Bolsa externa'
+	                        END AS TIPO_BOLSA
                         FROM 
                             GBICANDI 
                         JOIN 
@@ -257,6 +266,7 @@ namespace IbeApi.Controllers
                                 candidato.area = reader.IsDBNull(reader.GetOrdinal("AREAS")) ? null : reader.GetString(reader.GetOrdinal("AREAS"));//NIVEL_DESCRICAO
                                 candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NIVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));                                                                                          //candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
                                 candidato.pontuacao = reader.IsDBNull(reader.GetOrdinal("PONTUACA")) ? 0 : reader.GetInt16(reader.GetOrdinal("PONTUACA"));
+                                candidato.tipo_bolsa = reader.IsDBNull(reader.GetOrdinal("TIPO_BOLSA")) ? null : reader.GetString(reader.GetOrdinal("TIPO_BOLSA")); 
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
 
@@ -290,6 +300,9 @@ namespace IbeApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Candidato candidato)
         {
+
+            int cod_zona = getProvincZone(candidato.codprovi);
+
             if (candidato == null)
             {
                 _logger.LogWarning("Post request received with null candidate.");
@@ -324,9 +337,9 @@ namespace IbeApi.Controllers
 
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NVEL, ESPECIAL, ESTADODO, TIPODEDO, DATASUBM)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NVEL, NIVEL, ESPECIAL, ESTADODO, TIPODEDO, DATASUBM, CODZONA, CANDIDA)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NVEL, @ESPECIAL, @ESTADODO, @TIPODEDO, @DATASUBM);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NVEL, @NIVEL, @ESPECIAL, @ESTADODO, @TIPODEDO, @DATASUBM, @CODZONA, @CANDIDA);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -353,10 +366,12 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@CODAREA", (object)candidato.codarea ?? DBNull.Value);
                         command.Parameters.AddWithValue("@ESPECIAL", (object)candidato.especialidade ?? DBNull.Value);
                         command.Parameters.AddWithValue("@NVEL", (object)candidato.nivel ?? DBNull.Value);//ESTADODO
+                        command.Parameters.AddWithValue("@NIVEL", (object)candidato.nivel ?? DBNull.Value);
                         command.Parameters.AddWithValue("@ESTADODO", "P");
                         command.Parameters.AddWithValue("@TIPODEDO", (object)candidato.tipo_doc ?? DBNull.Value);
                         command.Parameters.AddWithValue("@DATASUBM", DateTime.Now);
- 
+                        command.Parameters.AddWithValue("@CANDIDA", 1);
+                        command.Parameters.AddWithValue("@CODZONA", cod_zona);
 
 
 
@@ -409,7 +424,32 @@ namespace IbeApi.Controllers
                 }
             }
         }
-       
+
+        private int getProvincZone(int codProv)
+        {
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                int zona;
+                connection.Open();
+                const string sql = @"
+            SELECT CODZONA
+            FROM GBIPROVI
+            WHERE CODPROVI = @CODPROVI;";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@CODPROVI", codProv);
+
+                    //var reader = command.ExecuteReader()
+                    zona = (int)command.ExecuteScalar();
+
+                    return zona;
+                }
+            }
+
+        }
+
 
         [HttpPut("{codcandi}")]
         public IActionResult Put(int codcandi, [FromBody] CandidatoDTO candidato)

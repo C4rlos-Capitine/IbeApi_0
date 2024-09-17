@@ -32,6 +32,7 @@ namespace IbeApi.Models
         public string? area { get; set; }
         public string? nivel { get; set; }
         public int? pontuacao { get; set; }
+        public String? tipo_bolsa {  get; set; }
        // public int codarea { get; set; }
         public string especialidade { get; set; }
     }

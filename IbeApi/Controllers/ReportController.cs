@@ -76,7 +76,12 @@ namespace IbeApi.Controllers
                             GBIPROVI.CODPROVI, 
                             GBIPROVI.PROVINCI, 
                             AREAS, 
-                            GBICANDI.CODAREA 
+                            GBICANDI.CODAREA,
+                            GBIEDITA.TIPOSBOL, 
+                            CASE
+		                         WHEN GBIEDITA.TIPOSBOL = 'I' THEN 'Bolsa interna'
+		                         WHEN GBIEDITA.TIPOSBOL = 'E' THEN 'Bolsa externa'
+	                        END AS TIPO_BOLSA
                         FROM 
                             GBICANDI 
                         JOIN 
@@ -122,8 +127,9 @@ namespace IbeApi.Controllers
                                 candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NIVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));                                                                                          //candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
                                 candidato.pontuacao = reader.IsDBNull(reader.GetOrdinal("PONTUACA")) ? 0 : reader.GetInt16(reader.GetOrdinal("PONTUACA"));
                                 //candidato.data_subm = reader.GetDateTime("DATASUBM");
+                                
+                                candidato.tipo_bolsa = reader.IsDBNull(reader.GetOrdinal("TIPO_BOLSA")) ? null : reader.GetString(reader.GetOrdinal("TIPO_BOLSA"));
                                 int columnIndex = reader.GetOrdinal("DATASUBM");
-
                                 // Retrieve the value using the column index
                                 candidato.data_subm = reader.GetDateTime(columnIndex);
                                 candidato.FindTrue = true; // Set to true if candidate is found

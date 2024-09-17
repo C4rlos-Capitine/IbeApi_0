@@ -54,5 +54,35 @@ namespace IbeApi.Controllers
             }
 
         }
+        [HttpGet("{codprovi}")]
+        public IActionResult getZona(int codprovi)
+        {
+            return Ok(new { codprovi });
+
+        }
+        private int getProvincZone(int codProv)
+        {
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                int zona;
+                connection.Open();
+                const string sql = @"
+            SELECT CODZONA
+            FROM GBIPROVI
+            WHERE CODPROVI = @CODPROVI;";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@CODPROVI", codProv);
+
+                    //var reader = command.ExecuteReader()
+                    zona = (int)command.ExecuteScalar();
+
+                    return zona;
+                }
+            }
+
+        }
     }
 }
