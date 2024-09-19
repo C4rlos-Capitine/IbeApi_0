@@ -17,6 +17,18 @@
       "PackagePath": "staticwebassets\\images\\logotipo_header.png"
     },
     {
+      "Id": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\1\\img.png",
+      "PackagePath": "staticwebassets\\images\\paises\\1\\img.png"
+    },
+    {
+      "Id": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\2\\img.png",
+      "PackagePath": "staticwebassets\\images\\paises\\2\\img.png"
+    },
+    {
+      "Id": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\6\\img.png",
+      "PackagePath": "staticwebassets\\images\\paises\\6\\img.png"
+    },
+    {
       "Id": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\-1536606847\\Procedimentos_Higiene_Segurança_Alimentar.pdf",
       "PackagePath": "staticwebassets\\uploads\\-1536606847\\Procedimentos_Higiene_Segurança_Alimentar.pdf"
     },

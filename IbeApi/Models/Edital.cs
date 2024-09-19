@@ -7,5 +7,6 @@
         public int numero { get; set; } 
         public string nome { get; set; }
         public bool FindTrue { get; set; }
+        public string imageUrl { get; set; }
     }
 }

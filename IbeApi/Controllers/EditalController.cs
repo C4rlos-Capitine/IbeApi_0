@@ -24,11 +24,9 @@ namespace IbeApi.Controllers
         [HttpGet]
         public IActionResult GetEditais()
         {
-            //Edital edital = new Edital();
             var editais = new List<Edital>();
             try
             {
-                // Initialize the SqlConnection with the connection string
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
@@ -41,12 +39,14 @@ namespace IbeApi.Controllers
                         {
                             while (reader.Read())
                             {
+                                var codEdital = reader.GetInt32(reader.GetOrdinal("CODEDITA"));
                                 var edital = new Edital
                                 {
-                                    codEdital = reader.GetInt32(reader.GetOrdinal("CODEDITA")),
+                                    codEdital = codEdital,
                                     numero = reader.GetInt32(reader.GetOrdinal("NUMERO")),
                                     ano = reader.GetInt16(reader.GetOrdinal("ANO")),
-                                    nome = reader.GetString(reader.GetOrdinal("NOME"))
+                                    nome = reader.GetString(reader.GetOrdinal("NOME")),
+                                    imageUrl = $"/images/paises/{codEdital}.jpg" // Construct the image URL
                                 };
 
                                 // Add the edital to the list
@@ -69,5 +69,6 @@ namespace IbeApi.Controllers
 
             return Ok(editais);
         }
+
     }
 }
