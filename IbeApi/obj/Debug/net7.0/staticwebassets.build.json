@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uj5w3cn6oEgv3lLbAadqCGIyEm9hSmxx/vde55RONvM=",
+  "Hash": "6TpO0uOvc5bCQ5ngwBCqVWtGn1LuDHjHqWlge+4jWcg=",
   "Source": "IbeApi",
   "BasePath": "_content/IbeApi",
   "Mode": "Default",
@@ -74,12 +74,12 @@
       "OriginalItemSpec": "wwwroot\\images\\paises\\2\\img.png"
     },
     {
-      "Identity": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\6\\img.png",
+      "Identity": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\3\\img.png",
       "SourceId": "IbeApi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "images/paises/6/img.png",
+      "RelativePath": "images/paises/3/img.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,7 +90,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\paises\\6\\img.png"
+      "OriginalItemSpec": "wwwroot\\images\\paises\\3\\img.png"
+    },
+    {
+      "Identity": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\4\\img.png",
+      "SourceId": "IbeApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
+      "BasePath": "_content/IbeApi",
+      "RelativePath": "images/paises/4/img.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\paises\\4\\img.png"
     },
     {
       "Identity": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
