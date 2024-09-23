@@ -69,14 +69,6 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"
-            },
-            "itext7": {
-              "target": "Package",
-              "version": "[8.0.5, )"
-            },
-            "itextsharp": {
-              "target": "Package",
-              "version": "[5.5.13.4, )"
             }
           },
           "imports": [
