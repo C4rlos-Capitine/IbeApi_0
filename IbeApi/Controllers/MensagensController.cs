@@ -178,21 +178,21 @@ namespace IbeApi.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult MarkAsRead(int id)
+        [HttpPut("{email}")]
+        public IActionResult MarkAsRead(String email)
         {
             try
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    const string sql = "UPDATE GBIMSG SET LIDA = @LIDA WHERE ID = @ID";
+                    const string sql = "UPDATE GBIMSG SET LIDA = @LIDA WHERE @EMAIL = @EMAIL";
                     _logger.LogInformation("SQL command prepared: {sql}", sql);
 
                     using (var command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@LIDA", 1); // Marcando como lida
-                        command.Parameters.AddWithValue("@ID", id);
+                        command.Parameters.AddWithValue("@EMAIL", email);
 
                         int rowsAffected = command.ExecuteNonQuery();
                 
