@@ -3,11 +3,7 @@ using IbeApi.Services;
 //using MailKit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Crypto.Generators;
 using System.Data.SqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace IbeApi.Controllers
 {
@@ -88,9 +84,37 @@ namespace IbeApi.Controllers
             }
         }
 
+        private int generateCode(string email)
+        {
+            Random random = new Random();
+            int cod = -1;
+            using (var connection = new SqlConnection(_connectionString))
+            {
+              
+                connection.Open();
+                const string sql = @"INSERT INTO MOBILE_AUTH (EMAIL, DATAGERACAO, CODIGO, AUTENTICOU) OUTPUT INSERTED.EMAIL VALUES (@EMAIL, @DATAGERACAO, @CODIGO, @AUTENTICOU);";
+                cod = random.Next(100000, 1000000);
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@EMAIL", email);
+                    command.Parameters.AddWithValue("@DATAGERACAO", DateTime.UtcNow);
+                    command.Parameters.AddWithValue("@CODIGO", cod);
+                    command.Parameters.AddWithValue("@AUTENTICOU", 0);
+                    command.ExecuteScalar();
+                    _logger.LogInformation("mensagem guardada ID");
+                }
+            }
+            return cod;
+        }
+
         [HttpPost]
         public bool SendMail(MailData Mail_Data)
         {
+            if(Mail_Data.auth == 1)
+            {
+                int codigoGerado = generateCode(Mail_Data.EmailToId);
+                Mail_Data.setCodigo(codigoGerado);
+            }
             return Mail_Service.SendMail(Mail_Data);
         }
     }

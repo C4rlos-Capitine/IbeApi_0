@@ -152,7 +152,7 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@LIDA", 0);
                         command.Parameters.AddWithValue("@CODEDITAL", mensagens.codedital);
                         command.Parameters.AddWithValue("@DATAENVIO", mensagens.data_envio);
-                        mensagens.id = (int)command.ExecuteScalar();
+                        command.ExecuteScalar();
                         _logger.LogInformation("mensagem guardada ID");
                     }
                 }

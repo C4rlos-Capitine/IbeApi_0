@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using IbeApi.Models;
 using System.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System.Data;
+using IbeApi.Services;
 
 namespace IbeApi.Controllers
 {
@@ -14,7 +13,6 @@ namespace IbeApi.Controllers
     {
         private readonly string _connectionString;
         private readonly ILogger<CandidatoController> _logger;
-        
 
         public CandidatoController(IConfiguration configuration, ILogger<CandidatoController> logger)
         {
@@ -322,6 +320,8 @@ namespace IbeApi.Controllers
                 };
                 return Ok(result);
             }
+           
+            
 
             int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
 
@@ -374,10 +374,36 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@CODZONA", cod_zona);
 
 
-
+                        
                         // Executar o comando e obter o ID do candidato inserido
                         candidato.codcandi = (int)command.ExecuteScalar();
                         _logger.LogInformation("Candidate data inserted successfully with ID {codcandi}", candidato.codcandi);
+
+                    }
+                }
+
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    _logger.LogInformation("Database connection opened.");
+
+
+
+                    const string sql = @"
+                INSERT INTO GBIMSG (EMAIL, CODEDITAL, MSG, TITLE, LIDA, DATAENVIO)
+                OUTPUT INSERTED.EMAIL
+                VALUES (@EMAIL, @CODEDITAL, @MSG, @TITLE, @LIDA, @DATAENVIO);";
+
+                    using (var command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@EMAIL", candidato.email);
+                        command.Parameters.AddWithValue("@TITLE", "AVISO");
+                        command.Parameters.AddWithValue("@MSG", "Submeta seus documentos na aba de documenttos para finalizar sua candidatura");
+                        command.Parameters.AddWithValue("@LIDA", 0);
+                        command.Parameters.AddWithValue("@CODEDITAL", candidato.codedital);
+                        command.Parameters.AddWithValue("@DATAENVIO", DateTime.Now);
+                        command.ExecuteScalar();
+                        _logger.LogInformation("mensagem guardada ID");
                     }
                 }
 
@@ -387,7 +413,9 @@ namespace IbeApi.Controllers
                     Message = "CandidatO registadO Com sucesso",
                     Code = candidato.codcandi,
                     success = true,
+                    //mailData = mail_service
                 };
+
                 return Ok(result);
                // return CreatedAtAction(nameof(Get), new { codcandi = candidato.codcandi }, result);
             }

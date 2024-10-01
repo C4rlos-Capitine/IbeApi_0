@@ -3,8 +3,6 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 using MailKit.Net.Smtp;
 using System.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using IbeApi.Controllers;
 
 namespace IbeApi.Services
@@ -22,7 +20,13 @@ namespace IbeApi.Services
         }
         public bool SendMail(MailData Mail_Data)
         {
-
+            if (Mail_Data.auth == 1) { 
+                return useTWOStepsAuth(Mail_Data);
+            }
+            if (Mail_Data.password.Length>0)
+            {
+                return SendConfirm(Mail_Data);
+            }
             var newpassword = UpdatePassword(Mail_Data.EmailToId);
             if (newpassword == "0") { 
                 return false;
@@ -39,6 +43,70 @@ namespace IbeApi.Services
                 email_Message.Subject = Mail_Data.EmailSubject;
                 BodyBuilder emailBodyBuilder = new BodyBuilder();
                 emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá "+Mail_Data.EmailToName+"!</h1><p style='font-size: 16px;'>Sua nova senha é: "+ newpassword + "</p>\"\r\n";
+
+                //emailBodyBuilder.TextBody = Mail_Data.EmailBody;
+                email_Message.Body = emailBodyBuilder.ToMessageBody();
+                //this is the SmtpClient class from the Mailkit.Net.Smtp namespace, not the System.Net.Mail one
+                SmtpClient MailClient = new SmtpClient();
+                MailClient.Connect(Mail_Settings.Host, Mail_Settings.Port, Mail_Settings.UseSSL);
+                MailClient.Authenticate(Mail_Settings.EmailId, Mail_Settings.Password);
+                MailClient.Send(email_Message);
+                MailClient.Disconnect(true);
+                MailClient.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Error {ex}", ex);
+                return false;
+            }
+        }
+        private bool SendConfirm(MailData Mail_Data)
+        {
+
+
+            try
+            {
+                //MimeMessage - a class from Mimekit
+                MimeMessage email_Message = new MimeMessage();
+                MailboxAddress email_From = new MailboxAddress(Mail_Settings.Name, Mail_Settings.EmailId);
+                email_Message.From.Add(email_From);
+                MailboxAddress email_To = new MailboxAddress(Mail_Data.EmailToName, Mail_Data.EmailToId);
+                email_Message.To.Add(email_To);
+                email_Message.Subject = Mail_Data.EmailSubject;
+                BodyBuilder emailBodyBuilder = new BodyBuilder();
+                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá " + Mail_Data.EmailToId + "!</h1><p style='font-size: 16px;'>Sua inscrição foi bem sucedida. Autentique - se com a sua senha: " + Mail_Data.password + " e email</p>\"\r\n";
+
+                //emailBodyBuilder.TextBody = Mail_Data.EmailBody;
+                email_Message.Body = emailBodyBuilder.ToMessageBody();
+                //this is the SmtpClient class from the Mailkit.Net.Smtp namespace, not the System.Net.Mail one
+                SmtpClient MailClient = new SmtpClient();
+                MailClient.Connect(Mail_Settings.Host, Mail_Settings.Port, Mail_Settings.UseSSL);
+                MailClient.Authenticate(Mail_Settings.EmailId, Mail_Settings.Password);
+                MailClient.Send(email_Message);
+                MailClient.Disconnect(true);
+                MailClient.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Exception Details
+                return false;
+            }
+        }
+        private bool useTWOStepsAuth(MailData Mail_Data)
+        {
+            try
+            {
+                //MimeMessage - a class from Mimekit
+                MimeMessage email_Message = new MimeMessage();
+                MailboxAddress email_From = new MailboxAddress(Mail_Settings.Name, Mail_Settings.EmailId);
+                email_Message.From.Add(email_From);
+                MailboxAddress email_To = new MailboxAddress(Mail_Data.EmailToName, Mail_Data.EmailToId);
+                email_Message.To.Add(email_To);
+                email_Message.Subject = "codigo: "+ Mail_Data.getCodigo();
+                BodyBuilder emailBodyBuilder = new BodyBuilder();
+                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá " + Mail_Data.EmailToId + "!</h1><p style='font-size: 16px;'>O seu Código de autenticação: " + Mail_Data.getCodigo() + " </p>\"\r\n";
 
                 //emailBodyBuilder.TextBody = Mail_Data.EmailBody;
                 email_Message.Body = emailBodyBuilder.ToMessageBody();

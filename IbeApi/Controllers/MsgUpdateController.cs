@@ -15,7 +15,7 @@ namespace IbeApi.Controllers
             _connectionString = configuration.GetConnectionString("SqlServerDb") ?? ""; // Ensure it will never be null
             _logger = logger;
         }
-        [HttpPut("{email}")]
+        [HttpPost("{email}")]
         public IActionResult MarkAsRead(String email)
         {
             try
@@ -52,7 +52,6 @@ namespace IbeApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred: " + ex.Message);
             }
 
-            return NoContent(); // Retorna 204 No Content se a atualização for bem-sucedida
         }
     }
 }
