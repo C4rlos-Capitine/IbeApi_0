@@ -75,6 +75,8 @@ namespace IbeApi.Controllers
                             GBIPROVI.CODPROVI, 
                             GBIPROVI.PROVINCI, 
                             AREAS, 
+	                        GBIDISTR.DISTRITO,
+	                        GBICANDI.BAIRRO,
                             GBICANDI.CODAREA,
                             GBIEDITA.TIPOSBOL, 
                             CASE
@@ -89,6 +91,8 @@ namespace IbeApi.Controllers
                             GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA 
                         JOIN 
                             GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA 
+                        JOIN 
+	                        GBIDISTR ON GBIDISTR.CODDISTR = GBICANDI.CODDISTR
                         WHERE 
                             CODCANDI = @CODCANDI";
                     using (var command = new SqlCommand(sql, connection))
@@ -213,6 +217,8 @@ namespace IbeApi.Controllers
                             GBIPROVI.CODPROVI, 
                             GBIPROVI.PROVINCI, 
                             AREAS, 
+	                        GBIDISTR.DISTRITO,
+	                        GBICANDI.BAIRRO,
                             GBICANDI.CODAREA,
                             GBIEDITA.TIPOSBOL, 
                             CASE
@@ -227,6 +233,8 @@ namespace IbeApi.Controllers
                             GBIEDITA ON GBIEDITA.CODEDITA = GBICANDI.CODEDITA 
                         JOIN 
                             GBIAREA ON GBIAREA.CODAREA = GBICANDI.CODAREA 
+                        JOIN 
+	                        GBIDISTR ON GBIDISTR.CODDISTR = GBICANDI.CODDISTR
                         WHERE 
                             EMAIL = @EMAIL AND PASSWORD = @PASSWORD";
                     using (var command = new SqlCommand(sql, connection))
@@ -320,11 +328,11 @@ namespace IbeApi.Controllers
                 };
                 return Ok(result);
             }
-           
-            
 
-            int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
+            //int[] dadosLocalidade = GetInfoByLocalidade(candidato.posto);
 
+            //int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
+            int codcandi = getLastCodCandi();
             _logger.LogInformation("Post request received for candidate: {candidato}");
 
             try
@@ -337,14 +345,14 @@ namespace IbeApi.Controllers
 
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NVEL, NIVEL, ESPECIAL, ESTADODO, TIPODEDO, DATASUBM, CODZONA, CANDIDA)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NVEL, NIVEL, ESPECIAL, ESTADODO, TIPODEDO, DATASUBM, CODZONA, CANDIDA, NUIT, MEDIAOBT, EORFAO, PAI, MAE, CODPOSTO, CODDISTR, BAIRRO)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NVEL, @NIVEL, @ESPECIAL, @ESTADODO, @TIPODEDO, @DATASUBM, @CODZONA, @CANDIDA);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NVEL, @NIVEL, @ESPECIAL, @ESTADODO, @TIPODEDO, @DATASUBM, @CODZONA, @CANDIDA, @NUIT, @MEDIAOBT, @EORFAO, @PAI, @MAE, @CODPOSTO, @CODDISTR, @BAIRRO);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@CODCANDI", codcandi);
-                        command.Parameters.AddWithValue("@CODPROVI", candidato.codprovi);
+                        command.Parameters.AddWithValue("@CODCANDI", codcandi+1);
+                        command.Parameters.AddWithValue("@CODPROVI", (object)candidato.codprovi ?? DBNull.Value);
                         
                         command.Parameters.AddWithValue("@NOME", (object)candidato.nome ?? DBNull.Value);
                         command.Parameters.AddWithValue("@APELIDO", (object)candidato.apelido ?? DBNull.Value);
@@ -372,9 +380,15 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@DATASUBM", DateTime.Now);
                         command.Parameters.AddWithValue("@CANDIDA", 1);
                         command.Parameters.AddWithValue("@CODZONA", cod_zona);
+                        command.Parameters.AddWithValue("@NUIT", (object)candidato.nuit ?? DBNull.Value);//MEDIAOBT
+                        command.Parameters.AddWithValue("@MEDIAOBT", (object)candidato.media_obt ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@EORFAO", (object)candidato.eorfao ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@PAI", (object)candidato.pai ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MAE", (object)candidato.mae ?? DBNull.Value);//CODDISTR
+                        command.Parameters.AddWithValue("@CODPOSTO", (object)candidato.distrito);
+                        command.Parameters.AddWithValue("@CODDISTR", candidato.distrito);//BAIRRO
+                        command.Parameters.AddWithValue("@BAIRRO", (object)candidato.bairro ?? DBNull.Value);
 
-
-                        
                         // Executar o comando e obter o ID do candidato inserido
                         candidato.codcandi = (int)command.ExecuteScalar();
                         _logger.LogInformation("Candidate data inserted successfully with ID {codcandi}", candidato.codcandi);
@@ -382,32 +396,11 @@ namespace IbeApi.Controllers
                     }
                 }
 
-                using (var connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
-                    _logger.LogInformation("Database connection opened.");
 
+                CreateMsg(candidato.email, candidato.codedital);
+                regFiliacao(codcandi + 1, candidato.nomepai, BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0), "P", candidato.filho_combatente);
+                regFiliacao(codcandi + 1, candidato.nomepai, BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0), "M", candidato.filho_combatente);
 
-
-                    const string sql = @"
-                INSERT INTO GBIMSG (EMAIL, CODEDITAL, MSG, TITLE, LIDA, DATAENVIO)
-                OUTPUT INSERTED.EMAIL
-                VALUES (@EMAIL, @CODEDITAL, @MSG, @TITLE, @LIDA, @DATAENVIO);";
-
-                    using (var command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@EMAIL", candidato.email);
-                        command.Parameters.AddWithValue("@TITLE", "AVISO");
-                        command.Parameters.AddWithValue("@MSG", "Submeta seus documentos na aba de documenttos para finalizar sua candidatura");
-                        command.Parameters.AddWithValue("@LIDA", 0);
-                        command.Parameters.AddWithValue("@CODEDITAL", candidato.codedital);
-                        command.Parameters.AddWithValue("@DATAENVIO", DateTime.Now);
-                        command.ExecuteScalar();
-                        _logger.LogInformation("mensagem guardada ID");
-                    }
-                }
-
-                // Retornar uma resposta com código 201 e a mensagem de sucesso com o ID do candidato
                 var result = new
                 {
                     Message = "CandidatO registadO Com sucesso",
@@ -476,6 +469,130 @@ namespace IbeApi.Controllers
                 }
             }
 
+        }
+
+        private void CreateMsg(string email, int codedita)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                _logger.LogInformation("Database connection opened.");
+
+
+
+                const string sql = @"
+                INSERT INTO GBIMSG (EMAIL, CODEDITAL, MSG, TITLE, LIDA, DATAENVIO)
+                OUTPUT INSERTED.EMAIL
+                VALUES (@EMAIL, @CODEDITAL, @MSG, @TITLE, @LIDA, @DATAENVIO);";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@EMAIL", email);
+                    command.Parameters.AddWithValue("@TITLE", "AVISO");
+                    command.Parameters.AddWithValue("@MSG", "Submeta seus documentos na aba de documenttos para finalizar sua candidatura");
+                    command.Parameters.AddWithValue("@LIDA", 0);
+                    command.Parameters.AddWithValue("@CODEDITAL", codedita);
+                    command.Parameters.AddWithValue("@DATAENVIO", DateTime.Now);
+                    command.ExecuteScalar();
+                    _logger.LogInformation("mensagem guardada ID");
+                }
+            }
+        }
+        private void regFiliacao(int codcandi, String nome, int codFiliacao, String filiacao, String combatente)
+        {
+            int combatente2= 0;
+            if (combatente =="Sim")
+            {
+               combatente2= 1;
+            }
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    _logger.LogInformation("Database connection opened.");
+
+
+
+                    const string sql = @"
+                INSERT INTO GBIFILIA (CODFILIA, FILIACAO, NOME, CODCANDI, COMBATEN)
+                OUTPUT INSERTED.NOME
+                VALUES (@CODFILIA, @FILIACAO, @NOME, @CODCANDI, @COMBATEN);";
+
+                    using (var command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@CODFILIA", codFiliacao);
+                        command.Parameters.AddWithValue("@FILIACAO", filiacao);
+                        command.Parameters.AddWithValue("@NOME", nome);
+                        command.Parameters.AddWithValue("@CODCANDI", codcandi);
+                        command.Parameters.AddWithValue("@COMBATEN", combatente2);
+                        command.ExecuteScalar();
+                        _logger.LogInformation("mensagem guardada ID");
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                _logger.LogError(sqlEx, "SQL Error occurred while inserting candidate data.");
+                StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while inserting candidate data" + sqlEx);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while inserting candidate data.");
+                 StatusCode(StatusCodes.Status500InternalServerError, "An internal server error occurred" + ex);
+            }
+
+
+        }
+
+        private int[] GetInfoByLocalidade(int localid)
+        {
+            int[] dadosLocalidade = new int[3];
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                const string sql = @"
+            SELECT CODPROVI, CODDISTR, CODZONA 
+            FROM GBIPOSTO 
+            WHERE CODPOSTO = @CODPOSTO";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@CODPOSTO", localid);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            dadosLocalidade[0] = reader.GetInt32(0); // CODPROVI
+                            dadosLocalidade[1] = reader.GetInt32(1); // CODDISTR
+                            dadosLocalidade[2] = reader.GetInt32(2); // CODZONA
+                        }
+                    }
+                }
+            }
+
+            return dadosLocalidade;
+        }
+
+
+        private int getLastCodCandi() {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                int lastCodCandi;
+                connection.Open();
+                const string sql = @"
+            SELECT MAX(CODCANDI) AS MAXCOD FROM GBICANDI";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    lastCodCandi = (int)command.ExecuteScalar();
+
+                    return lastCodCandi;
+                }
+            }
         }
 
 

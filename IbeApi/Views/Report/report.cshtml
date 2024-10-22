@@ -6,7 +6,7 @@
 }
 
 @using IbeApi.Models
-@model IbeApi.Models.CandidatoDTO
+@model IbeApi.Models.CandidatoDTOPDFcs
 <!DOCTYPE html>
 
     <head>
@@ -76,6 +76,10 @@
             <td>Documento de Identificação</td>
             <td>@Model.identificacao</td>
         </tr>
+          <tr>
+            <td>Nuit</td>
+            <td>@Model.nuit</td>
+        </tr>
         <tr>
             <td>Naturalidade</td>
             <td>@Model.naturalidade</td>
@@ -87,6 +91,14 @@
         <tr>
             <td>Provincia de Candidatura</td>
             <td>@Model.provincia</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>@Model.distrito</td>
+        </tr>
+        <tr>
+            <td>Bairro</td>
+            <td>@Model.bairro</td>
         </tr>
         <tr>
             <td>Endereço</td>
@@ -117,6 +129,10 @@
         <tr>
             <td>Nível</td>
             <td>@Model.nivel</td>
+        </tr>
+        <tr>
+            <td>Média global</td>
+            <td>@Model.media</td>
         </tr>
         <tr>
             <td>Área</td>

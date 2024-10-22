@@ -53,8 +53,8 @@ namespace IbeApi.Controllers
                         value = "@CERTIFICADO";
                     }else if (tipo == 3)
                     {
-                        query = "UPDATE GBICANDI SET NUIT = @NUIT WHERE CODCANDI = @CODCANDI";
-                        value = "@NUIT";
+                        query = "UPDATE GBICANDI SET NUIT_DOC = @NUIT_DOC WHERE CODCANDI = @CODCANDI";
+                        value = "@NUIT_DOC";
                     }else if (tipo == 4)
                     {
                         query = "UPDATE GBICANDI SET FOTOPASSE = @FOTOPASSE WHERE CODCANDI = @CODCANDI";

@@ -26,13 +26,14 @@ namespace IbeApi.Controllers
             {
                 connection.Open();
 
-                string query = "SELECT COUNT(*) FROM MOBILE_AUTH WHERE EMAIL = @EMAIL AND CODIGO = @CODIGO";
+                string query = "SELECT COUNT(*) FROM MOBILE_AUTH WHERE EMAIL = @EMAIL AND CODIGO = @CODIGO AND EXPIROU = @EXPIROU";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     // Adiciona parâmetros para evitar SQL Injection
                     command.Parameters.AddWithValue("@EMAIL", email);
-                    command.Parameters.AddWithValue("@CODIGO", codigo);
+                    command.Parameters.AddWithValue("@CODIGO", codigo); 
+                    command.Parameters.AddWithValue("@EXPIROU", 0);
 
                     var result = command.ExecuteScalar();
 
@@ -54,7 +55,7 @@ namespace IbeApi.Controllers
                             {
                                 count_res = count,
                                 success = false,
-                                message = "Email ou código incorretos."
+                                message = "código incorretos ou expirou."
                             });
                         }
                     }

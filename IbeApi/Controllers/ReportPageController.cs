@@ -19,7 +19,7 @@ namespace IbeApi.Controllers
         {
             _logger.LogInformation("Get request received for candidate ID {codcandi}", email);
 
-            CandidatoDTO candidato = new CandidatoDTO();
+            CandidatoDTOPDFcs candidato = new CandidatoDTOPDFcs();
 
             try
             {
@@ -43,7 +43,8 @@ namespace IbeApi.Controllers
                             GBIEDITA.NOME AS EDITAL, 
                             GBICANDI.CODEDITA, 
                             DATADENA, 
-                            DATAEMIS, 
+                            DATAEMIS,
+                            MEDIAOBT,
                             VALIDO, 
                             GBICANDI.IDADE, 
                             APELIDO, 
@@ -51,7 +52,9 @@ namespace IbeApi.Controllers
                             NOMECOMP, 
                             EMAIL, 
                             TELEFONE, 
-                            TELEMOVE, 
+                            TELEMOVE,
+	                        DISTRITO,
+	                        BAIRRO,
                             GENERO, 
                             PONTUACA,
                             GBICANDI.NIVEL,
@@ -112,8 +115,11 @@ namespace IbeApi.Controllers
                                 candidato.edital = reader.IsDBNull(reader.GetOrdinal("EDITAL")) ? null : reader.GetString(reader.GetOrdinal("EDITAL"));
                                 candidato.especialidade = reader.IsDBNull(reader.GetOrdinal("ESPECIAL")) ? null : reader.GetString(reader.GetOrdinal("ESPECIAL"));
                                 candidato.area = reader.IsDBNull(reader.GetOrdinal("AREAS")) ? null : reader.GetString(reader.GetOrdinal("AREAS"));//NIVEL_DESCRICAO
-                                candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NIVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));                                                                                          //candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
+                                candidato.nivel = reader.IsDBNull(reader.GetOrdinal("NIVEL_DESCRICAO")) ? null : reader.GetString(reader.GetOrdinal("NIVEL_DESCRICAO"));
+                                candidato.distrito = reader.IsDBNull(reader.GetOrdinal("DISTRITO")) ? null : reader.GetString(reader.GetOrdinal("DISTRITO"));//candidato.codarea = reader.GetInt32(reader.GetOrdinal("CODAREA"));
+                                candidato.distrito = reader.IsDBNull(reader.GetOrdinal("BAIRRO")) ? null : reader.GetString(reader.GetOrdinal("BAIRRO"));
                                 candidato.pontuacao = reader.IsDBNull(reader.GetOrdinal("PONTUACA")) ? 0 : reader.GetInt16(reader.GetOrdinal("PONTUACA"));
+                                candidato.media = reader.IsDBNull(reader.GetOrdinal("MEDIAOBT")) ? 0 : reader.GetFloat(reader.GetOrdinal("MEDIAOBT"));
                                 candidato.FindTrue = true; // Set to true if candidate is found
 
 

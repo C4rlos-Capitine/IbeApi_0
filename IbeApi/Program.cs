@@ -20,6 +20,10 @@ builder.Services.AddScoped<IMailService, MailService>(); // Choose one lifetime
 // You can comment out or remove the following line since scoped is typically used.
 builder.Services.AddTransient<IMailService, MailService>();
 
+// Obtenha a string de conexão do appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("SqlServerDb");
+builder.Services.AddSingleton<IHostedService>(new CodigoCleanupService(connectionString));
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
