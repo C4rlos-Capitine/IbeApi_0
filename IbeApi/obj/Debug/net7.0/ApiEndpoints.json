@@ -1,0 +1,840 @@
+[
+  {
+    "ContainingType": "IbeApi.Controllers.AreaController",
+    "Method": "get",
+    "RelativePath": "api/Area/codedita",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codedita",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.AuthController",
+    "Method": "TryAuth",
+    "RelativePath": "api/Auth/authenticate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.AuthController",
+    "Method": "SetAuthenticated",
+    "RelativePath": "api/Auth/setAuthenticated",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidateController",
+    "Method": "Post",
+    "RelativePath": "api/Candidate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codcandi",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "apelido",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "nomecomp",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "telefone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "telemovel",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "genero",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "num_ident",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "codprovi",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "rua",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "naturalidade",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dia",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ano",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ocupacao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipo_doc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dia_emissao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes_emissao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ano_emissao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "dia_validade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes_validade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ano_validade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "codedital",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "nivel",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codarea",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "especialidade",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "data_subm",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "bi_file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "nuit_file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "certificado_file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "foto_passe",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "media_obt",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "nuit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidatoController",
+    "Method": "Post",
+    "RelativePath": "api/Candidato",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "candidato",
+        "Type": "IbeApi.Models.Candidato",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidatoController",
+    "Method": "Get",
+    "RelativePath": "api/Candidato/{codcandi}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codcandi",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidatoController",
+    "Method": "Put",
+    "RelativePath": "api/Candidato/{codcandi}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codcandi",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "candidato",
+        "Type": "IbeApi.Models.CandidatoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidatoController",
+    "Method": "GetByEmailAndPhone",
+    "RelativePath": "api/Candidato/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidatoController",
+    "Method": "UploadFile",
+    "RelativePath": "api/Candidato/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidaturaController",
+    "Method": "saveCandidatura",
+    "RelativePath": "api/Candidatura",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "candidatura",
+        "Type": "IbeApi.Models.CandidaturaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CandidaturaController",
+    "Method": "Get",
+    "RelativePath": "api/Candidatura/{codcandi}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codcandi",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.CursoController",
+    "Method": "Index",
+    "RelativePath": "api/Curso",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.DistritoController",
+    "Method": "Get",
+    "RelativePath": "api/Distrito",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.DistritoController",
+    "Method": "GetByProvince",
+    "RelativePath": "api/Distrito/{codprovi}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codprovi",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.DistritoController2",
+    "Method": "GetByProvince",
+    "RelativePath": "api/DistritoController2/codprovi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cod",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.DocController",
+    "Method": "UploadFile",
+    "RelativePath": "api/Doc/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.EditalController",
+    "Method": "GetEditais",
+    "RelativePath": "api/Edital",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.FileUploadController",
+    "Method": "GetCertificado",
+    "RelativePath": "api/FileUpload/download_certificado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.FileUploadController",
+    "Method": "GetFoto",
+    "RelativePath": "api/FileUpload/download_foto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.FileUploadController",
+    "Method": "GetFile",
+    "RelativePath": "api/FileUpload/download_identificacao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.FileUploadController",
+    "Method": "GetNuit",
+    "RelativePath": "api/FileUpload/download_nuit",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.FileUploadController",
+    "Method": "UploadFile",
+    "RelativePath": "api/FileUpload/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.ImagesController",
+    "Method": "GetImage",
+    "RelativePath": "api/Images/paises/{imageName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MailController",
+    "Method": "SendMail",
+    "RelativePath": "api/Mail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Mail_Data",
+        "Type": "IbeApi.Models.MailData",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MailController",
+    "Method": "CheckEmailExists",
+    "RelativePath": "api/Mail/email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MensagensController",
+    "Method": "SaveMsg",
+    "RelativePath": "api/Mensagens",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mensagens",
+        "Type": "IbeApi.Models.Mensagens",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MensagensController",
+    "Method": "GetMsg",
+    "RelativePath": "api/Mensagens/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MensagensController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/Mensagens/{email}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MensagensController",
+    "Method": "GetAllMsg",
+    "RelativePath": "api/Mensagens/msg/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "all",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MsgController",
+    "Method": "GetAllMsg",
+    "RelativePath": "api/Msg/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.MsgUpdateController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/MsgUpdate/{email}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.PostoController",
+    "Method": "Get",
+    "RelativePath": "api/Posto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.ProvinciaController",
+    "Method": "Get",
+    "RelativePath": "api/Provincia",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.ProvinciaController",
+    "Method": "getZona",
+    "RelativePath": "api/Provincia/{codprovi}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codprovi",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.ReportController",
+    "Method": "Report",
+    "RelativePath": "api/Report/report",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.TesteUploadController",
+    "Method": "UploadFiles",
+    "RelativePath": "api/TesteUpload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileA",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileB",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.UploadController",
+    "Method": "DownloadFiles",
+    "RelativePath": "api/Upload/download",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IbeApi.Controllers.UploadController",
+    "Method": "UploadFile",
+    "RelativePath": "api/Upload/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bi",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "nuit",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "certificado",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

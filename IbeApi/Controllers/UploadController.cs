@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using System.Data.SqlClient;
+using System.IO.Compression;
 
 namespace IbeApi.Controllers
 {
@@ -138,6 +139,93 @@ namespace IbeApi.Controllers
                 });
             }
         }
+
+        [HttpGet("download")]
+        public async Task<IActionResult> DownloadFiles([FromQuery] string email)
+        {
+            try
+            {
+                // Define a dictionary to hold file data and content types
+                var fileData = new Dictionary<string, (byte[] Bytes, string ContentType)>();
+
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Query to retrieve the files based on the email
+                    var query = "SELECT BI, NUIT_DOC, CERTIFICADO, FOTOPASSE FROM GBICANDI WHERE EMAIL = @EMAIL";
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EMAIL", email);
+
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            if (await reader.ReadAsync())
+                            {
+                                // Read each file as a byte array
+                                if (reader["BI"] != DBNull.Value)
+                                {
+                                    fileData["BI.pdf"] = (reader["BI"] as byte[], "application/pdf");
+                                }
+
+                                if (reader["NUIT_DOC"] != DBNull.Value)
+                                {
+                                    fileData["NUIT.pdf"] = (reader["NUIT_DOC"] as byte[], "application/pdf");
+                                }
+
+                                if (reader["CERTIFICADO"] != DBNull.Value)
+                                {
+                                    fileData["CERTIFICADO.pdf"] = (reader["CERTIFICADO"] as byte[], "application/pdf");
+                                }
+
+                                if (reader["FOTOPASSE"] != DBNull.Value)
+                                {
+                                    fileData["FOTOPASSE.jpg"] = (reader["FOTOPASSE"] as byte[], "image/jpeg");
+                                }
+                            }
+                            else
+                            {
+                                return NotFound(new { StatusCode = 404, Message = "Registro não encontrado." });
+                            }
+                        }
+                    }
+                }
+
+                // Prepare the response with downloadable files
+                var zipFileName = $"{email}_files.zip";
+                using (var zipStream = new MemoryStream())
+                {
+                    using (var zipArchive = new ZipArchive(zipStream, ZipArchiveMode.Create, true))
+                    {
+                        foreach (var file in fileData)
+                        {
+                            var entry = zipArchive.CreateEntry(file.Key, CompressionLevel.Fastest);
+                            using (var entryStream = entry.Open())
+                            {
+                                await entryStream.WriteAsync(file.Value.Bytes, 0, file.Value.Bytes.Length);
+                            }
+                        }
+                    }
+
+                    zipStream.Seek(0, SeekOrigin.Begin);
+                    return File(zipStream.ToArray(), "application/zip", zipFileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                Console.Error.WriteLine(ex);
+
+                // Return error response
+                return StatusCode(500, new
+                {
+                    StatusCode = 500,
+                    Message = "Um erro ocorreu ao tentar baixar os arquivos. " + ex.Message
+                });
+            }
+        }
+
+
 
     }
 }
