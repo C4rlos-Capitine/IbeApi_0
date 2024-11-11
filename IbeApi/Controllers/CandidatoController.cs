@@ -332,11 +332,14 @@ namespace IbeApi.Controllers
             //int[] dadosLocalidade = GetInfoByLocalidade(candidato.posto);
 
             //int codcandi = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
-            int codcandi = getLastCodCandi();
+            //int codcandi = getLastCodCandi();
+          
             _logger.LogInformation("Post request received for candidate: {candidato}");
 
             try
             {
+                  int codcandi = codProximoCandidato();
+                setCodProximoCandi(codcandi);
                 using (var connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
@@ -351,7 +354,7 @@ namespace IbeApi.Controllers
 
                     using (var command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@CODCANDI", codcandi+1);
+                        command.Parameters.AddWithValue("@CODCANDI", codcandi);
                         command.Parameters.AddWithValue("@CODPROVI", (object)candidato.codprovi ?? DBNull.Value);
                         
                         command.Parameters.AddWithValue("@NOME", (object)candidato.nome ?? DBNull.Value);
@@ -470,6 +473,50 @@ namespace IbeApi.Controllers
             }
 
         }
+        private int codProximoCandidato()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                const string sql = @"
+        SELECT proximo
+        FROM Codigos_Sequenciais
+        WHERE id_objecto = @id_objecto;";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@id_objecto", "GBICANDI");
+
+                    // Retrieve as long and cast to int if it fits within range
+                   int  cod = (int)(long)command.ExecuteScalar();
+
+                    return cod;
+                }
+            }
+        }
+
+        private void setCodProximoCandi(int cod)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                const string sql = @"
+                    UPDATE Codigos_Sequenciais
+                    SET proximo = @proximo
+                    WHERE id_objecto = @id_objecto;";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@proximo", cod + 1); // Increment cod by 1
+                    command.Parameters.AddWithValue("@id_objecto", "GBICANDI");
+
+                    command.ExecuteNonQuery(); // Executes the update command
+                }
+            }
+        }
+
 
         private void CreateMsg(string email, int codedita)
         {
