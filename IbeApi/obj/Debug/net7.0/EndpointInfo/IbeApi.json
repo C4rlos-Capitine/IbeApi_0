@@ -1,0 +1,1645 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "quidgest.co.mz",
+    "description": "Example of email send",
+    "contact": {
+      "name": "quidgest.co.mz",
+      "email": "teste@quidgest.co.mz"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Area/codedita": {
+      "get": {
+        "tags": [
+          "Area"
+        ],
+        "parameters": [
+          {
+            "name": "codedita",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/authenticate": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/setAuthenticated": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidate": {
+      "post": {
+        "tags": [
+          "Candidate"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "codcandi": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "nome": {
+                    "type": "string"
+                  },
+                  "apelido": {
+                    "type": "string"
+                  },
+                  "nomecomp": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "telefone": {
+                    "type": "string"
+                  },
+                  "telemovel": {
+                    "type": "string"
+                  },
+                  "genero": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "num_ident": {
+                    "type": "string"
+                  },
+                  "idade": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "codprovi": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "rua": {
+                    "type": "string"
+                  },
+                  "naturalidade": {
+                    "type": "string"
+                  },
+                  "dia": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "mes": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ano": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ocupacao": {
+                    "type": "string"
+                  },
+                  "tipo_doc": {
+                    "type": "string"
+                  },
+                  "dia_emissao": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "mes_emissao": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ano_emissao": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "dia_validade": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "mes_validade": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ano_validade": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "codedital": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "nivel": {
+                    "type": "string"
+                  },
+                  "codarea": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "especialidade": {
+                    "type": "string"
+                  },
+                  "data_subm": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "bi_file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "nuit_file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "certificado_file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "foto_passe": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "media_obt": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "nuit": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "codcandi": {
+                  "style": "form"
+                },
+                "nome": {
+                  "style": "form"
+                },
+                "apelido": {
+                  "style": "form"
+                },
+                "nomecomp": {
+                  "style": "form"
+                },
+                "email": {
+                  "style": "form"
+                },
+                "telefone": {
+                  "style": "form"
+                },
+                "telemovel": {
+                  "style": "form"
+                },
+                "genero": {
+                  "style": "form"
+                },
+                "password": {
+                  "style": "form"
+                },
+                "num_ident": {
+                  "style": "form"
+                },
+                "idade": {
+                  "style": "form"
+                },
+                "codprovi": {
+                  "style": "form"
+                },
+                "rua": {
+                  "style": "form"
+                },
+                "naturalidade": {
+                  "style": "form"
+                },
+                "dia": {
+                  "style": "form"
+                },
+                "mes": {
+                  "style": "form"
+                },
+                "ano": {
+                  "style": "form"
+                },
+                "ocupacao": {
+                  "style": "form"
+                },
+                "tipo_doc": {
+                  "style": "form"
+                },
+                "dia_emissao": {
+                  "style": "form"
+                },
+                "mes_emissao": {
+                  "style": "form"
+                },
+                "ano_emissao": {
+                  "style": "form"
+                },
+                "dia_validade": {
+                  "style": "form"
+                },
+                "mes_validade": {
+                  "style": "form"
+                },
+                "ano_validade": {
+                  "style": "form"
+                },
+                "codedital": {
+                  "style": "form"
+                },
+                "nivel": {
+                  "style": "form"
+                },
+                "codarea": {
+                  "style": "form"
+                },
+                "especialidade": {
+                  "style": "form"
+                },
+                "data_subm": {
+                  "style": "form"
+                },
+                "bi_file": {
+                  "style": "form"
+                },
+                "nuit_file": {
+                  "style": "form"
+                },
+                "certificado_file": {
+                  "style": "form"
+                },
+                "foto_passe": {
+                  "style": "form"
+                },
+                "media_obt": {
+                  "style": "form"
+                },
+                "nuit": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidato/{codcandi}": {
+      "get": {
+        "tags": [
+          "Candidato"
+        ],
+        "parameters": [
+          {
+            "name": "codcandi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Candidato"
+        ],
+        "parameters": [
+          {
+            "name": "codcandi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidatoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidatoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidatoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidato/search": {
+      "get": {
+        "tags": [
+          "Candidato"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidato": {
+      "post": {
+        "tags": [
+          "Candidato"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Candidato"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Candidato"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Candidato"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidato/upload": {
+      "post": {
+        "tags": [
+          "Candidato"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidatura/{codcandi}": {
+      "get": {
+        "tags": [
+          "Candidatura"
+        ],
+        "parameters": [
+          {
+            "name": "codcandi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Candidatura": {
+      "post": {
+        "tags": [
+          "Candidatura"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidaturaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidaturaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidaturaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Curso": {
+      "get": {
+        "tags": [
+          "Curso"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Distrito": {
+      "get": {
+        "tags": [
+          "Distrito"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Distrito/{codprovi}": {
+      "get": {
+        "tags": [
+          "Distrito"
+        ],
+        "parameters": [
+          {
+            "name": "codprovi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DistritoController2/codprovi": {
+      "get": {
+        "tags": [
+          "DistritoController2"
+        ],
+        "parameters": [
+          {
+            "name": "cod",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Doc/upload": {
+      "post": {
+        "tags": [
+          "Doc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Edital": {
+      "get": {
+        "tags": [
+          "Edital"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FileUpload/upload": {
+      "post": {
+        "tags": [
+          "FileUpload"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FileUpload/download_certificado": {
+      "get": {
+        "tags": [
+          "FileUpload"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FileUpload/download_identificacao": {
+      "get": {
+        "tags": [
+          "FileUpload"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FileUpload/download_nuit": {
+      "get": {
+        "tags": [
+          "FileUpload"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FileUpload/download_foto": {
+      "get": {
+        "tags": [
+          "FileUpload"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Images/paises/{imageName}": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "parameters": [
+          {
+            "name": "imageName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Mail/email": {
+      "get": {
+        "tags": [
+          "Mail"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Mail": {
+      "post": {
+        "tags": [
+          "Mail"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MailData"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MailData"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MailData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Mensagens/{email}": {
+      "get": {
+        "tags": [
+          "Mensagens"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Mensagens"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Mensagens/msg/search": {
+      "get": {
+        "tags": [
+          "Mensagens"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "all",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Mensagens": {
+      "post": {
+        "tags": [
+          "Mensagens"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mensagens"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mensagens"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mensagens"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Msg/{email}": {
+      "get": {
+        "tags": [
+          "Msg"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MsgUpdate/{email}": {
+      "post": {
+        "tags": [
+          "MsgUpdate"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Posto": {
+      "get": {
+        "tags": [
+          "Posto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Provincia": {
+      "get": {
+        "tags": [
+          "Provincia"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Provincia/{codprovi}": {
+      "get": {
+        "tags": [
+          "Provincia"
+        ],
+        "parameters": [
+          {
+            "name": "codprovi",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/report": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TesteUpload": {
+      "post": {
+        "tags": [
+          "TesteUpload"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "FileA": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "FileB": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "FileA": {
+                  "style": "form"
+                },
+                "FileB": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Upload/upload": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "bi": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "nuit": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "certificado": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "foto": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "bi": {
+                  "style": "form"
+                },
+                "nuit": {
+                  "style": "form"
+                },
+                "certificado": {
+                  "style": "form"
+                },
+                "foto": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Upload/download": {
+      "get": {
+        "tags": [
+          "Upload"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Candidato": {
+        "type": "object",
+        "properties": {
+          "codcandi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "apelido": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomecomp": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "telemovel": {
+            "type": "string",
+            "nullable": true
+          },
+          "genero": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "num_ident": {
+            "type": "string",
+            "nullable": true
+          },
+          "idade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codprovi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rua": {
+            "type": "string",
+            "nullable": true
+          },
+          "naturalidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "dia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ano": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ocupacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo_doc": {
+            "type": "string",
+            "nullable": true
+          },
+          "dia_emissao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mes_emissao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ano_emissao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dia_validade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mes_validade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ano_validade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codedital": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nivel": {
+            "type": "string",
+            "nullable": true
+          },
+          "codarea": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "especialidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "data_subm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "media_obt": {
+            "type": "number",
+            "format": "float"
+          },
+          "nuit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eorfao": {
+            "type": "string",
+            "nullable": true
+          },
+          "pai": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mae": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "distrito": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bairro": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomepai": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomemae": {
+            "type": "string",
+            "nullable": true
+          },
+          "filho_combatente": {
+            "type": "string",
+            "nullable": true
+          },
+          "agregado_numero": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CandidatoDTO": {
+        "type": "object",
+        "properties": {
+          "codcandi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "apelido": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomecomp": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "telemovel": {
+            "type": "string",
+            "nullable": true
+          },
+          "genero": {
+            "type": "string",
+            "nullable": true
+          },
+          "findTrue": {
+            "type": "boolean"
+          },
+          "identificacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "idade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codprovi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "datadena": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data_emissao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data_validade": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data_subm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ocupacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "rua": {
+            "type": "string",
+            "nullable": true
+          },
+          "naturalidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "edital": {
+            "type": "string",
+            "nullable": true
+          },
+          "area": {
+            "type": "string",
+            "nullable": true
+          },
+          "nivel": {
+            "type": "string",
+            "nullable": true
+          },
+          "pontuacao": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipo_bolsa": {
+            "type": "string",
+            "nullable": true
+          },
+          "especialidade": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CandidaturaDTO": {
+        "type": "object",
+        "properties": {
+          "codcandi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cod_edital": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codecurso": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dia_submissao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mes_submissao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ano_submissao": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MailData": {
+        "type": "object",
+        "properties": {
+          "emailToId": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailToName": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailSubject": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "auth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mensagens": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "lida": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codedital": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data_envio": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

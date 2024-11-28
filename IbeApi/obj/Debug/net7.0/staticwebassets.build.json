@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6TpO0uOvc5bCQ5ngwBCqVWtGn1LuDHjHqWlge+4jWcg=",
+  "Hash": "+1w5XYzUvCh/1vhdpIOeRD3yLZf2GJK8V0THy7rkhb0=",
   "Source": "IbeApi",
   "BasePath": "_content/IbeApi",
   "Mode": "Default",
@@ -22,15 +22,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "images/logotipo_header.png",
+      "RelativePath": "images/logotipo_header#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "75nv7mlzpz",
+      "Integrity": "Fer3sPqYf3z0vRR+VrBb+2iJ7WK8BQUZ0khT+mZmciA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logotipo_header.png"
@@ -41,15 +43,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "images/paises/1/img.png",
+      "RelativePath": "images/paises/1/img#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "wt5r1uw3v2",
+      "Integrity": "RO+Pp2DTOmMTuRVJ0/EIMot8aAMm2v9Thz+7H7+DEpA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\paises\\1\\img.png"
@@ -60,15 +64,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "images/paises/2/img.png",
+      "RelativePath": "images/paises/2/img#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "zuggfbkhsu",
+      "Integrity": "W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\paises\\2\\img.png"
@@ -79,15 +85,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "images/paises/3/img.png",
+      "RelativePath": "images/paises/3/img#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "zuggfbkhsu",
+      "Integrity": "W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\paises\\3\\img.png"
@@ -98,15 +106,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "images/paises/4/img.png",
+      "RelativePath": "images/paises/4/img#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "m6gfc40qdf",
+      "Integrity": "UmSrF+3LqerjAH9VDuhgPgz2J4wRaOWTktXitnI2AVM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\paises\\4\\img.png"
@@ -117,15 +127,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "Rotativa/wkhtmltoimage.exe",
+      "RelativePath": "Rotativa/wkhtmltoimage#[.{fingerprint}]?.exe",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "unmdmt38q6",
+      "Integrity": "BrLMDmZWAoyvWZdnLfVxd1GGQMOeCnyqIdFntxs5+xs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltoimage.exe"
@@ -136,15 +148,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "Rotativa/wkhtmltopdf.exe",
+      "RelativePath": "Rotativa/wkhtmltopdf#[.{fingerprint}]?.exe",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "jhzul28502",
+      "Integrity": "2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltopdf.exe"
@@ -155,15 +169,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "Rotativa/wkhtmltox.dll",
+      "RelativePath": "Rotativa/wkhtmltox#[.{fingerprint}]?.dll",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "w25v45g9f1",
+      "Integrity": "iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltox.dll"
@@ -174,15 +190,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/-1536606847/Procedimentos_Higiene_Segurança_Alimentar.pdf",
+      "RelativePath": "uploads/-1536606847/Procedimentos_Higiene_Segurança_Alimentar#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "lzxrwcaxvc",
+      "Integrity": "L2ssmO+jW1e4IIAK/1glx+o5SCj8/QTc5uASoFySaTM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\-1536606847\\Procedimentos_Higiene_Segurança_Alimentar.pdf"
@@ -193,15 +211,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/-1911108729/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "RelativePath": "uploads/-1911108729/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo#[.{fingerprint}]?.docx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "yrf26zo6cg",
+      "Integrity": "Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\-1911108729\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx"
@@ -212,15 +232,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/22/PES_Menu_221_18062024031456.pdf",
+      "RelativePath": "uploads/22/PES_Menu_221_18062024031456#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "5i2k248gve",
+      "Integrity": "rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\22\\PES_Menu_221_18062024031456.pdf"
@@ -231,15 +253,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/22/PES_Menu_221_18062024031515.pdf",
+      "RelativePath": "uploads/22/PES_Menu_221_18062024031515#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "hzl7ll2tfe",
+      "Integrity": "84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\22\\PES_Menu_221_18062024031515.pdf"
@@ -250,15 +274,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/23/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "RelativePath": "uploads/23/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo#[.{fingerprint}]?.docx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "yrf26zo6cg",
+      "Integrity": "Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\23\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx"
@@ -269,15 +295,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/23/PES_Menu_221_18062024031515.pdf",
+      "RelativePath": "uploads/23/PES_Menu_221_18062024031515#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "hzl7ll2tfe",
+      "Integrity": "84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\23\\PES_Menu_221_18062024031515.pdf"
@@ -288,15 +316,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/27/IBE.png",
+      "RelativePath": "uploads/27/IBE#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "1j9jtmpd3d",
+      "Integrity": "/ds3BXapmFxysjXTTHXL5RWxcT5zjRs0iYg5PehgZYw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\27\\IBE.png"
@@ -307,15 +337,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/3/20230726_Termos_Referência.pdf",
+      "RelativePath": "uploads/3/20230726_Termos_Referência#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "3okgaaf701",
+      "Integrity": "XdEvpuTIqYqAPVZl8yae954wY+UjuDUtAj+IkgMULAo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\3\\20230726_Termos_Referência.pdf"
@@ -326,15 +358,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/99/amazone.png",
+      "RelativePath": "uploads/99/amazone#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "pmpi1oc3uz",
+      "Integrity": "QdNfff+5yBZSOoSl/3vyJvSnWskCfz6ugEGutLE+Yso=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\99\\amazone.png"
@@ -345,15 +379,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "RelativePath": "uploads/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo#[.{fingerprint}]?.docx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "yrf26zo6cg",
+      "Integrity": "Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx"
@@ -364,15 +400,17 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/PES_Menu_221_18062024031456.pdf",
+      "RelativePath": "uploads/PES_Menu_221_18062024031456#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "5i2k248gve",
+      "Integrity": "rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\PES_Menu_221_18062024031456.pdf"
@@ -383,18 +421,1662 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\",
       "BasePath": "_content/IbeApi",
-      "RelativePath": "uploads/PES_Menu_221_18062024031515.pdf",
+      "RelativePath": "uploads/PES_Menu_221_18062024031515#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "hzl7ll2tfe",
+      "Integrity": "84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\PES_Menu_221_18062024031515.pdf"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/logotipo_header.75nv7mlzpz.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\logotipo_header.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4976"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Fer3sPqYf3z0vRR+VrBb+2iJ7WK8BQUZ0khT+mZmciA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Jun 2024 20:30:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "75nv7mlzpz"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logotipo_header.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Fer3sPqYf3z0vRR+VrBb+2iJ7WK8BQUZ0khT+mZmciA="
+        }
+      ]
+    },
+    {
+      "Route": "images/logotipo_header.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\logotipo_header.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4976"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Fer3sPqYf3z0vRR+VrBb+2iJ7WK8BQUZ0khT+mZmciA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Jun 2024 20:30:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Fer3sPqYf3z0vRR+VrBb+2iJ7WK8BQUZ0khT+mZmciA="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/1/img.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\1\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "227"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RO+Pp2DTOmMTuRVJ0/EIMot8aAMm2v9Thz+7H7+DEpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 13:59:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RO+Pp2DTOmMTuRVJ0/EIMot8aAMm2v9Thz+7H7+DEpA="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/1/img.wt5r1uw3v2.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\1\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "227"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RO+Pp2DTOmMTuRVJ0/EIMot8aAMm2v9Thz+7H7+DEpA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 13:59:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wt5r1uw3v2"
+        },
+        {
+          "Name": "label",
+          "Value": "images/paises/1/img.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RO+Pp2DTOmMTuRVJ0/EIMot8aAMm2v9Thz+7H7+DEpA="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/2/img.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\2\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 14:00:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/2/img.zuggfbkhsu.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\2\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 14:00:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zuggfbkhsu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/paises/2/img.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/3/img.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\3\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 14:00:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/3/img.zuggfbkhsu.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\3\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 14:00:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zuggfbkhsu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/paises/3/img.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W7Q0eUDQFwY9hNGJrLiJNgOimw2yyBe3GQo21t81nLU="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/4/img.m6gfc40qdf.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\4\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1678"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UmSrF+3LqerjAH9VDuhgPgz2J4wRaOWTktXitnI2AVM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 14:01:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m6gfc40qdf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/paises/4/img.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UmSrF+3LqerjAH9VDuhgPgz2J4wRaOWTktXitnI2AVM="
+        }
+      ]
+    },
+    {
+      "Route": "images/paises/4/img.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\images\\paises\\4\\img.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1678"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UmSrF+3LqerjAH9VDuhgPgz2J4wRaOWTktXitnI2AVM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Sep 2024 14:01:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UmSrF+3LqerjAH9VDuhgPgz2J4wRaOWTktXitnI2AVM="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltoimage.exe",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30184960"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BrLMDmZWAoyvWZdnLfVxd1GGQMOeCnyqIdFntxs5+xs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:04:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BrLMDmZWAoyvWZdnLfVxd1GGQMOeCnyqIdFntxs5+xs="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltoimage.unmdmt38q6.exe",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30184960"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BrLMDmZWAoyvWZdnLfVxd1GGQMOeCnyqIdFntxs5+xs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:04:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "unmdmt38q6"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltoimage.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BrLMDmZWAoyvWZdnLfVxd1GGQMOeCnyqIdFntxs5+xs="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltopdf.exe",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30235648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:03:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltopdf.jhzul28502.exe",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30235648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:03:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jhzul28502"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltopdf.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltox.dll",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30098944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltox.w25v45g9f1.dll",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30098944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w25v45g9f1"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltox.dll"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/-1536606847/Procedimentos_Higiene_Segurança_Alimentar.lzxrwcaxvc.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\-1536606847\\Procedimentos_Higiene_Segurança_Alimentar.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "435045"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L2ssmO+jW1e4IIAK/1glx+o5SCj8/QTc5uASoFySaTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 Aug 2024 14:09:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lzxrwcaxvc"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/-1536606847/Procedimentos_Higiene_Segurança_Alimentar.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L2ssmO+jW1e4IIAK/1glx+o5SCj8/QTc5uASoFySaTM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/-1536606847/Procedimentos_Higiene_Segurança_Alimentar.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\-1536606847\\Procedimentos_Higiene_Segurança_Alimentar.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "435045"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L2ssmO+jW1e4IIAK/1glx+o5SCj8/QTc5uASoFySaTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 Aug 2024 14:09:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-L2ssmO+jW1e4IIAK/1glx+o5SCj8/QTc5uASoFySaTM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/-1911108729/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\-1911108729\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 08:23:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/-1911108729/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.yrf26zo6cg.docx",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\-1911108729\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 08:23:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yrf26zo6cg"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/-1911108729/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/22/PES_Menu_221_18062024031456.5i2k248gve.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\22\\PES_Menu_221_18062024031456.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "142197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:35:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5i2k248gve"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/22/PES_Menu_221_18062024031456.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/22/PES_Menu_221_18062024031456.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\22\\PES_Menu_221_18062024031456.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "142197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:35:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/22/PES_Menu_221_18062024031515.hzl7ll2tfe.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\22\\PES_Menu_221_18062024031515.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:35:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hzl7ll2tfe"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/22/PES_Menu_221_18062024031515.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/22/PES_Menu_221_18062024031515.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\22\\PES_Menu_221_18062024031515.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:35:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/23/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\23\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:05:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/23/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.yrf26zo6cg.docx",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\23\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:05:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yrf26zo6cg"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/23/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/23/PES_Menu_221_18062024031515.hzl7ll2tfe.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\23\\PES_Menu_221_18062024031515.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:07:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hzl7ll2tfe"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/23/PES_Menu_221_18062024031515.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/23/PES_Menu_221_18062024031515.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\23\\PES_Menu_221_18062024031515.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Aug 2024 09:07:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/27/IBE.1j9jtmpd3d.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\27\\IBE.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/ds3BXapmFxysjXTTHXL5RWxcT5zjRs0iYg5PehgZYw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Sep 2024 05:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1j9jtmpd3d"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/27/IBE.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/ds3BXapmFxysjXTTHXL5RWxcT5zjRs0iYg5PehgZYw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/27/IBE.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\27\\IBE.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/ds3BXapmFxysjXTTHXL5RWxcT5zjRs0iYg5PehgZYw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Sep 2024 05:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/ds3BXapmFxysjXTTHXL5RWxcT5zjRs0iYg5PehgZYw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3/20230726_Termos_Referência.3okgaaf701.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\3\\20230726_Termos_Referência.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4961793"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XdEvpuTIqYqAPVZl8yae954wY+UjuDUtAj+IkgMULAo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 Aug 2024 05:57:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3okgaaf701"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/3/20230726_Termos_Referência.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XdEvpuTIqYqAPVZl8yae954wY+UjuDUtAj+IkgMULAo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3/20230726_Termos_Referência.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\3\\20230726_Termos_Referência.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4961793"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XdEvpuTIqYqAPVZl8yae954wY+UjuDUtAj+IkgMULAo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 Aug 2024 05:57:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XdEvpuTIqYqAPVZl8yae954wY+UjuDUtAj+IkgMULAo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/99/amazone.pmpi1oc3uz.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\99\\amazone.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49718"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QdNfff+5yBZSOoSl/3vyJvSnWskCfz6ugEGutLE+Yso=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Sep 2024 05:36:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pmpi1oc3uz"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/99/amazone.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QdNfff+5yBZSOoSl/3vyJvSnWskCfz6ugEGutLE+Yso="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/99/amazone.png",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\99\\amazone.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49718"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QdNfff+5yBZSOoSl/3vyJvSnWskCfz6ugEGutLE+Yso=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Sep 2024 05:36:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QdNfff+5yBZSOoSl/3vyJvSnWskCfz6ugEGutLE+Yso="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 31 Jul 2024 15:03:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.yrf26zo6cg.docx",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 31 Jul 2024 15:03:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yrf26zo6cg"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Menu do Sistema para a Componente Mobile de Gestão de Bolsas de Estudo.docx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xu5KHRUk58gF2sbp/dctEbRsrKyEnBO4KCwv8KuhOow="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/PES_Menu_221_18062024031456.5i2k248gve.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\PES_Menu_221_18062024031456.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "142197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 31 Jul 2024 15:13:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5i2k248gve"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/PES_Menu_221_18062024031456.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/PES_Menu_221_18062024031456.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\PES_Menu_221_18062024031456.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "142197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 31 Jul 2024 15:13:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rZvvMjXRk6cwzGS1fufUpHMbMTkjiozmKrSR6gKycMk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/PES_Menu_221_18062024031515.hzl7ll2tfe.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\PES_Menu_221_18062024031515.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 31 Jul 2024 15:04:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hzl7ll2tfe"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/PES_Menu_221_18062024031515.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/PES_Menu_221_18062024031515.pdf",
+      "AssetFile": "C:\\Users\\FALCAO\\Desktop\\dot net pro\\IbeApi\\IbeApi\\wwwroot\\uploads\\PES_Menu_221_18062024031515.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 31 Jul 2024 15:04:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-84ueb+FOAQrY3jYy1kIS4k6DPRvsOgYt9M4iwXUOUzI="
+        }
+      ]
     }
   ]
 }

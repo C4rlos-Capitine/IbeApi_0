@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\inetpub\IbeApi_v7</_PublishTargetUrl>
-    <History>True|2024-09-20T05:08:13.1712824Z||;True|2024-09-13T11:32:46.2300026+02:00||;True|2024-09-11T12:35:09.7116038+02:00||;</History>
+    <History>True|2024-11-12T12:49:13.0533625Z||;True|2024-09-20T07:08:13.1712824+02:00||;True|2024-09-13T11:32:46.2300026+02:00||;True|2024-09-11T12:35:09.7116038+02:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
