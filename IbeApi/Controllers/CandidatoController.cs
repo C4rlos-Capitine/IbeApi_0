@@ -348,9 +348,9 @@ namespace IbeApi.Controllers
 
 
                     const string sql = @"
-                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NVEL, NIVEL, ESPECIAL, ESTADODO, TIPODEDO, DATASUBM, CODZONA, CANDIDA, NUIT, MEDIAOBT, EORFAO, PAI, MAE, CODPOSTO, CODDISTR, BAIRRO)
+                INSERT INTO GBICANDI (CODCANDI, CODPROVI, PASSWORD, NOME, APELIDO, NOMECOMP, NUMEO, EMAIL, TELEFONE, TELEMOVE, GENERO, DATADENA, IDADE, OCUPACAO, NATURALI, RUA, DATAEMIS, VALIDO, CODEDITA, CODAREA, NVEL, NIVEL, ESPECIAL, ESTADODO, TIPODEDO, DATASUBM, CODZONA, CANDIDA, NUIT, MEDIAOBT, EORFAO, PAI, MAE, CODDISTR, BAIRRO, NUMEROAG)
                 OUTPUT INSERTED.CODCANDI
-                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NVEL, @NIVEL, @ESPECIAL, @ESTADODO, @TIPODEDO, @DATASUBM, @CODZONA, @CANDIDA, @NUIT, @MEDIAOBT, @EORFAO, @PAI, @MAE, @CODPOSTO, @CODDISTR, @BAIRRO);";
+                VALUES (@CODCANDI, @CODPROVI, @PASSWORD, @NOME, @APELIDO, @NOMECOMP, @NUMEO, @EMAIL, @TELEFONE, @TELEMOVE, @GENERO, @DATADENA, @IDADE, @OCUPACAO, @NATURALI, @RUA, @DATAEMIS, @VALIDO, @CODEDITA, @CODAREA, @NVEL, @NIVEL, @ESPECIAL, @ESTADODO, @TIPODEDO, @DATASUBM, @CODZONA, @CANDIDA, @NUIT, @MEDIAOBT, @EORFAO, @PAI, @MAE, @CODDISTR, @BAIRRO, @NUMEROAG);";
 
                     using (var command = new SqlCommand(sql, connection))
                     {
@@ -388,9 +388,11 @@ namespace IbeApi.Controllers
                         command.Parameters.AddWithValue("@EORFAO", (object)candidato.eorfao ?? DBNull.Value);
                         command.Parameters.AddWithValue("@PAI", (object)candidato.pai ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MAE", (object)candidato.mae ?? DBNull.Value);//CODDISTR
-                        command.Parameters.AddWithValue("@CODPOSTO", (object)candidato.distrito);
+                        //command.Parameters.AddWithValue("@CODPOSTO", (object)candidato.distrito);
                         command.Parameters.AddWithValue("@CODDISTR", candidato.distrito);//BAIRRO
                         command.Parameters.AddWithValue("@BAIRRO", (object)candidato.bairro ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@NUMEROAG", candidato.agregado_numero);
+                       // command.Parameters.AddWithValue("@ERESIDEN", (object)candidato.eResidente_na_prov_candi ?? DBNull.Value);
 
                         // Executar o comando e obter o ID do candidato inserido
                         candidato.codcandi = (int)command.ExecuteScalar();

@@ -39,12 +39,16 @@ namespace IbeApi.Models
         public String eorfao { get; set; }
         public int pai { get; set; }
         public int mae { get; set; }
-        public int posto { get; set; }
+        //public int posto { get; set; }
         public int distrito { get; set; }
         public String bairro {  get; set; }   // 22/10/2024
         public String nomepai { get; set; }
        public String nomemae {  get; set; } 
        public String filho_combatente { get; set; }
+    //12/11/2024
+       public int agregado_numero {  get; set; }
+      // public String eResidente_na_prov_candi {  get; set; } 
+        
     }
 
 

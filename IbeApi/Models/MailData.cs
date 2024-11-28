@@ -8,8 +8,10 @@
         public string password { get; set; }
         public int auth {  get; set; }
         private int codigo { get; set; }
+        public string name { get; set; }
         public void setCodigo(int codigo){this.codigo = codigo; }
         public int getCodigo(){return this.codigo;}
+        
         //public string EmailBody { get; set; }
         //public string HtmlBody { get; set; }
     }

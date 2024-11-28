@@ -4,6 +4,7 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using System.Data.SqlClient;
 using IbeApi.Controllers;
+using Microsoft.AspNetCore.Routing.Template;
 
 namespace IbeApi.Services
 {
@@ -42,7 +43,7 @@ namespace IbeApi.Services
                 email_Message.To.Add(email_To);
                 email_Message.Subject = Mail_Data.EmailSubject;
                 BodyBuilder emailBodyBuilder = new BodyBuilder();
-                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá "+Mail_Data.EmailToName+"!</h1><p style='font-size: 16px;'>Sua nova senha é: "+ newpassword + "</p>\"\r\n";
+                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá "+Mail_Data.name+"!</h1><p style='font-size: 16px;'>Sua nova senha é: "+ newpassword + "</p>\"\r\n";
 
                 //emailBodyBuilder.TextBody = Mail_Data.EmailBody;
                 email_Message.Body = emailBodyBuilder.ToMessageBody();
@@ -75,7 +76,7 @@ namespace IbeApi.Services
                 email_Message.To.Add(email_To);
                 email_Message.Subject = Mail_Data.EmailSubject;
                 BodyBuilder emailBodyBuilder = new BodyBuilder();
-                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá " + Mail_Data.EmailToId + "!</h1><p style='font-size: 16px;'>Sua inscrição foi bem sucedida. Autentique - se com a sua senha: " + Mail_Data.password + " e email</p>\"\r\n";
+                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá " + Mail_Data.name + "!</h1><p style='font-size: 16px;'>Sua inscrição foi bem sucedida. Autentique - se com a sua senha: " + Mail_Data.password + " e email</p>\"\r\n";
 
                 //emailBodyBuilder.TextBody = Mail_Data.EmailBody;
                 email_Message.Body = emailBodyBuilder.ToMessageBody();
@@ -105,9 +106,9 @@ namespace IbeApi.Services
                 MailboxAddress email_To = new MailboxAddress(Mail_Data.EmailToName, Mail_Data.EmailToId);
                 email_Message.To.Add(email_To);
                 email_Message.Subject = "codigo: "+ Mail_Data.getCodigo();
-                BodyBuilder emailBodyBuilder = new BodyBuilder();
-                emailBodyBuilder.HtmlBody = "<h1 style='color: blue;'>Olá " + Mail_Data.EmailToId + "!</h1><p style='font-size: 16px;'>O seu Código de autenticação: " + Mail_Data.getCodigo() + " </p>\"\r\n";
 
+                BodyBuilder emailBodyBuilder = new BodyBuilder();
+                emailBodyBuilder.HtmlBody = "<div><h1 style='color: blue;'>Olá " + Mail_Data.name + "!</h1><p style='font-size: 16px;'>O seu Código de autenticação: " + Mail_Data.getCodigo() + " </p></div>\"\r\n";
                 //emailBodyBuilder.TextBody = Mail_Data.EmailBody;
                 email_Message.Body = emailBodyBuilder.ToMessageBody();
                 //this is the SmtpClient class from the Mailkit.Net.Smtp namespace, not the System.Net.Mail one

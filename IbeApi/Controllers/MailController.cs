@@ -107,13 +107,51 @@ namespace IbeApi.Controllers
             return cod;
         }
 
+        private String getNameCandidate(String email)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                _logger.LogInformation("Database connection opened.");
+
+                const string sql = @"
+            SELECT NOME FROM GBICANDI WHERE EMAIL = @EMAIL;";
+
+                using (var command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@EMAIL", email);
+
+                    _logger.LogInformation("SQL command prepared: {sql}", sql);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string nome = reader.IsDBNull(reader.GetOrdinal("NOME")) ? null : reader.GetString(reader.GetOrdinal("NOME"));
+                            _logger.LogInformation("Candidate data retrieved successfully for {email}", email);
+                            return nome;
+                        }
+                        else
+                        {
+                            _logger.LogWarning("Candidate with email {email} not found.", email);
+                            return "";
+                        }
+                    }
+                }
+            }
+  
+        }
+
         [HttpPost]
         public bool SendMail(MailData Mail_Data)
         {
-            if(Mail_Data.auth == 1)
+            String email = getNameCandidate(Mail_Data.EmailToId);
+            Mail_Data.name = email;
+            if (Mail_Data.auth == 1)
             {
                 int codigoGerado = generateCode(Mail_Data.EmailToId);
                 Mail_Data.setCodigo(codigoGerado);
+
             }
             return Mail_Service.SendMail(Mail_Data);
         }
